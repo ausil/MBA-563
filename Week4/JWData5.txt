@@ -1,0 +1,4477 @@
+info     0  ended
+) Data from Richard A. Johnson and Dean W. Wichern,
+) Applied Multivariate Statistical Analysis, 5th Edition,
+) Prentice Hall, 2002.
+) The data sets were derived, with editing and correcting, from the
+) files on the data CDROM that comes with the book.
+) The data sets names are derived from the file names as follows.
+)  Chapter numbers 1, 2 ,..., 9 were changed to 01, 02, ..., 09
+)  Table, Example or Problem numbers 1, 2,...,9 were changed to
+)  01, 02, ..., 09
+)  Hyphen ('-') was changed to underscore ('_')
+)  The "extension" .dat was dropped
+)    File          Data set
+)    P5-9.dat   -> P05_09       (Problem 9 in Chapter 5)
+)    E9-14.dat  -> E09_14       (Example 14 in Chapter 9)
+)    T12-12.dat -> T12_12       (Table 12 in Chapter 12)
+)
+) A few data sets have row and column labels, but most do not.
+)
+) It contains the following data sets:
+)  P01_04    P05_09    T06_06    T07_01    T09_12    T11_08
+)  T01_01    P05_11    T06_05_06 T07_02    E10_04    T11_08B
+)  T01_02    T05_01    T06_07    T07_03    E10_05    T11_09
+)  T01_03    T05_02    T06_08    T07_04    P10_08C   T12_01
+)  T01_04    T05_08    T06_09    T07_05    P10_08E   T12_04
+)  T01_05    T05_08A   T06_10    T07_06    P10_09    T12_05
+)  T01_06    T05_09    T06_11    P08_23    P10_10    T12_06
+)  T01_07    T05_11    T06_11A   E08_04    P10_12    T12_07
+)  T01_08    T05_12    T06_12    T08_02    P10_16    T12_08
+)  T01_09    P06_08    T06_13    T08_04    P10_17    T12_09
+)  T01_10    P06_13    T06_14    T08_05    T11_01    T12_10
+)  T03_01    P06_14    T06_15    T08_06    T11_02    T12_12
+)  T04_01    T06_01    T06_16    P09_15    T11_04    T12_13
+)  T04_03    T06_02    T06_17    E09_06    T11_05    T12_14
+)  T04_05    T06_04    T06_18    E09_08    T11_06    T12_15
+)  T04_01_05 T06_05    E07_10    E09_14    T11_07
+)
+) Among these, T04_01_05 (combination of Tables 4.1 and 4.1),
+) T05_08A (combination of Table 5.8 and variable in problem 8.24),
+) T06_05_06 (combination of Tables 6.5 and 6.6), and T06_11a
+) (combination of tables 5.12 and 6.11) do not have equivalent
+) separate files
+)
+) In MacAnova, these data sets may be read, for example, by 
+)      Cmd> y <- matread("JWData5.txt","t07_02")
+) or, if variable DATAFILE has been assigned "JWData5.txt" as value, by
+)      Cmd> y <- getdata(t07_02) # no quotes used with getdata
+) In Windowed versions you can set DATAFILE qppropriately by
+)      Cmd> DATAFILE <- getfilename()
+) and selecting "JWData5.txt" in the file navigation dialog box
+)
+) File version 030813 prepared by Christopher Bingham (kb@umn.edu)
+%info%
+
+P01_04    10    3 format
+) Data from Problem 1.4 in Chapter 1 p. 39 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P1-4.DAT on disk from book
+) Source: Fortune, 121 (April 23, 1990, 346-367)
+) Data on 10 largest U.S. industrial corporations
+) Col. 0: Corporation name (skipped by format)
+) Col. 1: x1 = sales (millions of dollars)
+) Col. 2: x2 = profits (millions of dollars)
+) Col. 3: x3 = assests (millions of dollars)
+)"16x%f %f %f"
+(16x,f8.0,f6.0,f8.0)
+General_Motors    126974  4224  173297
+Ford               96933  3835  160893
+Exxon              86656  3510   83219
+IBM                63438  3758   77734
+General_Electric   55264  3939  128344
+Mobil              50976  1809   39080
+Philip_Morris      39069  2946   38528
+Chrysler           36156   359   51038
+Du_Pont            35209  2480   34715
+Texaco             32416  2413   25636
+
+T01_01    6    2 formatted
+) Data from Table 1.1 p. 14 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T1-1.DAT on disk from book
+) 1977 salary and final record for the National League East
+) Col. 0: Team (skipped by format)
+) Col. 1: x1 = player payroll
+) Col. 2: x2 = won-lost percentage
+)"9x %f %f"
+(9x,f8.0,f7.3)
+Phillies  3497900  0.623
+Pirates   2485475  0.593
+Cardinals 1782875  0.512
+Cubs      1725450  0.500
+Expos     1645575  0.463
+Mets      1469800  0.395
+
+T01_02    41    3 format
+) Data from Table 1.2, p. 15 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T1-2.DAT on disk from book
+) Paper quality measurements (omitting specimen number)
+) Col. 1: Density
+) Col. 2: Machine direction strength
+) Col. 3: Cross direction strength
+)"%lf %lf %lf"
+(f6.3,f7.2,f6.2)
+ 0.801 121.41 70.42
+ 0.824 127.70 72.47
+ 0.841 129.20 78.20
+ 0.816 131.80 74.89
+ 0.840 135.10 71.21
+ 0.842 131.50 78.39
+ 0.820 126.70 69.02
+ 0.802 115.10 73.10
+ 0.828 130.80 79.28
+ 0.819 124.60 76.48
+ 0.826 118.31 70.25
+ 0.802 114.20 72.88
+ 0.810 120.30 68.23
+ 0.802 115.70 68.12
+ 0.832 117.51 71.62
+ 0.796 109.81 53.10
+ 0.759 109.10 50.85
+ 0.770 115.10 51.68
+ 0.759 118.31 50.60
+ 0.772 112.60 53.51
+ 0.806 116.20 56.53
+ 0.803 118.00 70.70
+ 0.845 131.00 74.35
+ 0.822 125.70 68.29
+ 0.971 126.10 72.10
+ 0.816 125.80 70.64
+ 0.836 125.50 76.33
+ 0.815 127.80 76.75
+ 0.822 130.50 80.33
+ 0.822 127.90 75.68
+ 0.843 123.90 78.54
+ 0.824 124.10 71.91
+ 0.788 120.80 68.22
+ 0.782 107.40 54.42
+ 0.795 120.70 70.41
+ 0.805 121.91 73.68
+ 0.836 122.31 74.93
+ 0.788 110.60 53.52
+ 0.772 103.51 48.93
+ 0.776 110.71 53.67
+ 0.758 113.80 52.42
+
+T01_03    25    3  format
+) Data from Table 1.3 p. 17 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T1-3.DAT on disk from book
+) Lizard size data
+) Col. 1: mass = mass (g)
+) Col. 2: svl = snout vent length (mm)
+) Col. 3: hls = hind limb span (mm)
+)"%lf %lf %lf"
+(f7.6,2f8.6)
+  5.526    59.0   113.5
+ 10.401    75.0   142.0
+  9.213    69.0   124.0
+  8.953    67.5   125.0
+  7.063    62.0   129.5
+  6.610    62.0   123.0
+ 11.273    74.0   140.0
+  2.447    47.0    97.0
+ 15.493    86.5   162.0
+  9.004    69.0   126.5
+  8.199    70.5   136.0
+  6.601    64.5   116.0
+  7.622    67.5   135.0
+ 10.067    73.0   136.5
+ 10.091    73.0   135.5
+ 10.888    77.0   139.0
+  7.610    61.5   118.0
+  7.733    66.5   133.5
+ 12.015    79.5   150.0
+ 10.049    74.0   137.0
+  5.149    59.5   116.0
+  9.158    68.0   123.0
+ 12.132    75.0   141.0
+  6.978    66.5   117.0
+  6.890    63.0   117.0
+
+T01_04     7    8 format
+) Data from Table 1.4 p. 25 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T1-4.DAT on disk from book
+) Female bear data
+) Col. 1: Wt2 = Weight at 2 years (kg)
+) Col. 2: Wt3 = Weight at 3 years (kg)
+) Col. 3: Wt4 = Weight at 4 years (kg)
+) Col. 4: Wt5 = Weight at 5 years (kg)
+) Col. 5: lngth2 = Length at 2 years (cm)
+) Col. 6: lngth3 = Length at 3 years (cm)
+) Col. 7: lngth4 = Length at 4 years (cm)
+) Col. 8: lngth5 = Length at 5 years (cm)
+)"%lf %lf %lf %lf %lf %lf %lf %lf"
+(f4.0,7f5.0)
+  48   59   95   82  141  157  168  183
+  59   68  102  102  140  168  174  170
+  61   77   93  107  145  162  172  177
+  54   43  104  104  146  159  176  171
+ 100  145  185  247  150  158  168  175
+  68   82   95  118  142  140  178  189
+  68   95  109  111  139  171  176  175
+
+T01_05    42    7  format
+) Data from Table 1.5 p. 40 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T1-5.DAT on disk from book
+) Data were in Edition 4 Table 1.3
+) Air-pollution data
+) Col. 1: x1 = Wind
+) Col. 2: x2 = Solar radiation
+) Col. 3: x3 = CO
+) Col. 4: x4 = NO
+) Col. 5: x5 = NO2
+) Col. 6: x6 = O3
+) Col. 7: x7 = HC
+)"%lf %lf %lf %lf %lf %lf %lf"
+(f3.0,f4.0,2f2.0,2f3.0,f2.0)
+  8  98 7 2 12  8 2
+  7 107 4 3  9  5 3
+  7 103 4 3  5  6 3
+ 10  88 5 2  8 15 4
+  6  91 4 2  8 10 3
+  8  90 5 2 12 12 4
+  9  84 7 4 12 15 5
+  5  72 6 4 21 14 4
+  7  82 5 1 11 11 3
+  8  64 5 2 13  9 4
+  6  71 5 4 10  3 3
+  6  91 4 2 12  7 3
+  7  72 7 4 18 10 3
+ 10  70 4 2 11  7 3
+ 10  72 4 1  8 10 3
+  9  77 4 1  9 10 3
+  8  76 4 1  7  7 3
+  8  71 5 3 16  4 4
+  9  67 4 2 13  2 3
+  9  69 3 3  9  5 3
+ 10  62 5 3 14  4 4
+  9  88 4 2  7  6 3
+  8  80 4 2 13 11 4
+  5  30 3 3  5  2 3
+  6  83 5 1 10 23 4
+  8  84 3 2  7  6 3
+  6  78 4 2 11 11 3
+  8  79 2 1  7 10 3
+  6  62 4 3  9  8 3
+ 10  37 3 1  7  2 3
+  8  71 4 1 10  7 3
+  7  52 4 1 12  8 4
+  5  48 6 5  8  4 3
+  6  75 4 1 10 24 3
+ 10  35 4 1  6  9 2
+  8  85 4 1  9 10 2
+  5  86 3 1  6 12 2
+  5  86 7 2 13 18 2
+  7  79 7 4  9 25 3
+  7  79 5 2  8  6 2
+  6  68 6 2 11 14 3
+  8  40 4 3  6  5 2
+
+T01_06    98    6 format
+) Data from Table 1.6 p. 42 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T1-6.DAT on disk from book
+) by making making column 1 be group number (1 or 2) and removing
+) last column which was group coded as 0 or 1.
+)
+) Multple-Sclerosis data derived from evoked responses to visual
+) stimuli recorded from the scalp of a subject.  Two different visual
+) stimuli S1 and S2 produced responses in the left (L) and right (R)
+) eyes of subjects, some of whom had multiple sclerosis (MS).
+) Col. 1: Group number, 1 = Non-MS group, 2 = MS group
+) Col. 2: x1 = Age of subject
+) Col. 3: x2 = S1L + S1R (Sum of left and right responses to stimulus S1)
+) Col. 4: x3 = abs(S1L - S1R)
+) Col. 5: x4 = S2L + S2R
+) Col. 6: x5 = abs(S2L - S2R)
+)"%lf %lf %lf %lf %lf %lf"
+(f1.0,f3.0,f6.1,f5.1,f6.1,f5.1)
+1 18 152.0  1.6 198.4  0.0
+1 19 138.0  0.4 180.8  1.6
+1 20 144.0  0.0 186.4  0.8
+1 20 143.6  3.2 194.8  0.0
+1 20 148.8  0.0 217.6  0.0
+1 21 141.6  0.8 181.6  0.8
+1 21 136.0  1.6 180.0  0.8
+1 21 137.6  1.6 185.6  3.2
+1 22 140.4  3.2 182.0  3.2
+1 22 137.2  0.0 181.8  0.2
+1 22 125.4  1.0 169.2  0.0
+1 22 142.4  4.8 185.6  0.0
+1 22 150.4  0.0 214.4  3.2
+1 22 145.6  1.6 203.6  5.2
+1 23 147.2  3.2 196.8  1.6
+1 23 139.2  1.6 179.2  0.0
+1 24 169.6  0.0 204.8  0.0
+1 24 139.2  1.6 176.0  3.2
+1 24 153.6  0.0 212.0  0.8
+1 25 146.8  0.0 194.8  3.2
+1 25 139.2  1.6 198.4  3.2
+1 25 136.0  1.6 181.6  2.4
+1 26 138.8  1.6 191.6  0.0
+1 26 150.4  0.0 205.2  0.4
+1 26 139.0  1.4 178.6  0.2
+1 27 133.8  0.2 180.8  0.0
+1 27 139.0  1.8 190.4  1.6
+1 28 136.0  1.6 193.2  3.6
+1 28 146.4  0.8 195.6  2.8
+1 29 145.2  4.8 194.2  3.8
+1 29 146.4  0.8 208.2  0.2
+1 29 138.0  2.8 181.2  0.4
+1 30 148.8  1.6 196.4  1.6
+1 31 137.2  0.0 184.0  0.0
+1 31 147.2  0.0 197.6  0.8
+1 32 144.0  0.0 185.8  0.2
+1 32 156.0  0.0 192.8  2.4
+1 34 137.0  0.2 182.4  0.0
+1 35 143.2  2.4 184.0  1.6
+1 36 141.6  0.8 187.2  1.6
+1 37 152.0  1.6 189.2  2.8
+1 39 157.4  3.4 227.0  2.6
+1 40 141.4  0.6 209.2  1.6
+1 42 156.0  2.4 195.2  3.2
+1 43 150.4  1.6 180.0  0.8
+1 43 142.4  1.6 188.8  0.0
+1 46 158.0  2.0 192.0  3.2
+1 48 130.0  3.6 190.0  0.4
+1 49 152.2  1.4 200.0  4.8
+1 49 150.0  3.2 206.6  2.2
+1 50 146.4  2.4 191.6  2.8
+1 54 146.0  1.2 203.2  1.6
+1 55 140.8  0.0 184.0  1.6
+1 56 140.4  0.4 203.2  1.6
+1 56 155.8  3.0 187.8  2.6
+1 56 141.6  0.8 196.8  1.6
+1 57 144.8  0.8 188.0  0.8
+1 57 146.8  3.2 191.6  0.0
+1 59 176.8  2.4 232.8  0.8
+1 60 171.0  1.8 202.0  3.6
+1 60 163.2  0.0 224.0  0.0
+1 60 171.6  1.2 213.8  3.4
+1 60 146.4  4.0 203.2  4.8
+1 62 146.8  3.6 201.6  3.2
+1 67 154.4  2.4 205.2  6.0
+1 69 171.2  1.6 210.4  0.8
+1 73 157.2  0.4 204.8  0.0
+1 74 175.2  5.6 235.6  0.4
+1 79 155.0  1.4 204.4  0.0
+2 23 148.0  0.8 205.4  0.6
+2 25 195.2  3.2 262.8  0.4
+2 25 158.0  8.0 209.8 12.2
+2 28 134.4  0.0 198.4  3.2
+2 29 190.2 14.2 243.8 10.6
+2 29 160.4 18.4 222.8 31.2
+2 31 227.8 90.2 270.2 83.0
+2 34 211.0  3.0 250.8  5.2
+2 35 204.8 12.8 254.4 11.2
+2 36 141.2  6.8 194.4 21.6
+2 39 157.4  3.4 227.0  2.6
+2 42 166.4  0.0 226.0  0.0
+2 43 191.8 35.4 243.6 40.8
+2 44 156.8  0.0 203.2  0.0
+2 44 202.8 29.2 246.4 24.8
+2 44 165.2 18.4 254.0 46.4
+2 45 162.0  5.6 224.4  8.8
+2 45 138.4  0.8 176.8  4.0
+2 45 158.4  1.6 214.4  0.0
+2 46 155.4  1.8 201.2  6.0
+2 46 214.8  9.2 290.6  0.6
+2 47 185.0 19.0 274.4  7.6
+2 48 236.0 20.0 328.0  0.0
+2 57 170.8 24.0 228.4 33.6
+2 57 165.6 16.8 229.2 15.6
+2 58 238.4  8.0 304.4  6.0
+2 58 164.0  0.8 216.8  0.8
+2 58 169.8  0.0 219.2  1.6
+2 59 199.8  4.6 250.2  1.0
+
+T01_07    98    6 format
+) Data from Table 1.7 p. 43 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T1-7.DAT on disk from book
+) Radiotherapy data
+) Average ratings over the course of treatment for patients undergoing
+) radiotherapy.
+) Col. 1: x1 = number of symptoms
+) Col. 2: x2 = amount of activity (1-5 scale)
+) Col. 3: x3 = amount of sleep (1-5 scale)
+) Col. 4: x4 = amount of food consumed (1-3 scale)
+) Col. 5: x5 = appetite (1-5 scale)
+) Col. 6: x6 = skin reaction (0, 1, 2 or 3) 
+) Note from book: Rows containing values of x2 and x3 < 1.0
+)                 may be omitted
+)"%lf %lf %lf %lf %lf %lf"
+(5f6.3,f2.0)
+ 0.889 1.389 1.555 2.222 1.945 1
+ 2.813 1.437 0.999 2.312 2.312 2
+ 1.454 1.091 2.364 2.455 2.909 3
+ 0.294 0.941 1.059 2.000 1.000 1
+ 2.727 2.545 2.819 2.727 4.091 0
+ 3.937 1.250 1.937 2.937 3.749 1
+ 2.786 1.714 2.357 2.071 2.000 2
+ 5.231 2.692 1.077 1.846 2.539 1
+ 1.150 1.100 0.950 2.000 1.000 1
+ 6.500 2.562 1.749 2.562 2.499 1
+ 0.800 1.000 2.200 2.267 2.466 2
+ 4.600 2.000 3.000 2.500 3.400 1
+ 3.500 1.286 2.714 1.286 1.252 3
+ 3.444 2.556 2.388 2.389 3.000 1
+ 4.071 1.000 1.000 2.357 1.572 1
+ 3.692 1.000 2.538 2.154 2.615 1
+ 5.167 3.000 1.000 2.667 3.666 0
+ 0.500 1.000 1.000 2.000 1.000 0
+ 2.385 1.923 2.539 2.154 2.461 1
+ 2.100 1.300 1.300 1.800 2.600 1
+ 5.000 3.250 3.125 2.375 3.375 0
+ 4.571 1.214 3.286 2.571 3.572 1
+ 2.733 1.133 2.600 1.933 1.667 1
+ 4.235 2.294 2.706 2.176 1.883 1
+ 0.000 1.000 1.941 2.000 2.000 0
+ 0.750 1.125 3.000 1.875 2.000 3
+ 3.077 1.462 2.384 2.000 1.846 2
+ 1.600 1.200 2.950 2.000 2.750 1
+ 6.273 3.636 1.182 2.545 3.364 0
+ 2.625 1.000 2.438 1.937 2.062 2
+ 1.250 1.000 2.000 2.000 3.000 1
+ 2.437 2.062 1.687 1.875 1.375 1
+ 4.454 1.727 2.637 2.636 3.546 1
+ 0.133 1.000 1.000 2.000 1.000 0
+ 0.222 1.222 1.445 2.000 1.000 1
+ 2.467 2.667 2.200 1.933 1.800 3
+ 4.000 1.000 4.000 2.167 2.500 0
+ 5.385 3.154 2.384 2.846 2.539 1
+ 0.773 1.000 2.273 1.909 2.091 0
+ 3.786 2.000 1.571 1.786 1.285 3
+ 1.923 1.615 1.693 2.000 1.846 1
+ 1.000 1.333 1.834 2.000 1.917 1
+ 5.800 2.600 3.000 2.800 4.200 1
+ 6.062 1.000 1.562 2.375 1.750 0
+ 3.706 1.235 1.530 2.118 2.294 1
+ 2.444 2.333 1.223 2.444 1.776 3
+ 6.111 2.222 2.889 2.889 3.555 2
+ 2.533 1.067 1.600 2.000 1.333 1
+ 2.167 1.000 2.167 2.000 2.500 1
+ 2.375 1.062 2.375 2.000 2.125 3
+ 1.875 1.312 2.188 2.125 2.062 2
+ 1.750 1.333 1.167 1.750 1.000 1
+ 7.333 1.333 1.459 1.958 1.542 3
+ 5.250 1.375 2.812 2.125 2.563 3
+ 5.182 2.000 2.727 2.818 4.000 2
+ 1.875 2.000 2.250 2.813 2.437 2
+ 5.400 2.000 1.200 1.800 1.400 2
+ 1.154 1.000 1.923 1.846 2.462 1
+ 6.375 2.250 2.500 2.125 3.000 1
+ 9.454 2.727 3.818 2.455 3.272 3
+ 1.000 1.000 1.917 1.833 2.167 1
+ 1.444 1.111 2.000 2.111 2.000 1
+ 1.800 1.100 3.100 2.200 2.600 1
+ 2.818 2.000 1.955 2.045 2.546 2
+10.461 2.154 2.769 2.000 2.923 0
+ 4.143 1.929 2.642 2.429 3.142 3
+ 1.227 1.182 1.091 2.227 3.182 1
+ 5.667 3.000 1.667 2.667 5.000 1
+ 4.111 2.556 2.222 2.778 3.778 1
+ 4.444 1.667 2.222 2.000 2.444 0
+ 3.714 3.857 2.643 2.286 3.285 0
+ 7.400 3.700 3.100 2.500 4.200 1
+ 3.182 2.455 1.636 2.273 3.000 1
+ 5.200 2.600 0.800 1.800 2.000 0
+ 2.333 1.667 0.666 1.667 2.166 0
+ 3.333 1.917 2.083 1.917 3.000 1
+ 5.250 2.750 2.500 2.000 4.000 0
+ 7.714 4.000 3.071 2.929 4.428 3
+ 3.846 2.615 3.000 2.692 3.693 2
+ 2.444 1.111 1.000 2.111 1.667 2
+ 5.333 1.917 3.000 2.250 1.917 1
+ 1.556 1.778 3.444 2.667 3.333 1
+ 3.182 1.545 1.910 2.273 3.000 1
+ 6.222 2.444 3.689 2.444 3.445 1
+ 7.231 1.000 3.154 2.308 4.384 2
+ 3.857 1.071 3.000 2.071 2.286 1
+ 3.778 1.944 1.612 1.611 1.945 1
+ 6.000 1.400 2.067 2.267 2.866 2
+ 2.333 3.583 2.334 2.333 2.667 2
+ 7.571 2.143 3.143 2.571 3.929 1
+ 3.667 2.000 2.111 2.778 4.000 3
+ 3.600 2.933 2.067 2.200 2.867 0
+ 3.364 1.273 1.810 2.000 2.273 0
+ 4.100 1.900 2.800 2.000 2.600 2
+ 0.125 1.062 1.437 1.875 1.563 0
+ 6.231 2.769 1.462 2.385 4.000 2
+ 3.000 1.455 2.090 2.273 3.272 2
+ 0.889 1.000 1.000 2.000 1.000 2
+
+T01_08    25    6 format
+) Data from Table 1.8 p. 44 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T1-8.DAT on disk from book
+) Mineral content in bones.
+) Mineral content of 6 bones of older women
+) Col. 1: Dominant radius
+) Col. 2: Non-dominant radius
+) Col. 3: Dominant humerus
+) Col. 4: Non-dominant humerus
+) Col. 5: Dominant ulna
+) Col. 6: Non-dominant ulna
+)"%lf %lf %lf %lf %lf %lf"
+(6f6.3)
+ 1.103 1.052 2.139 2.238 0.873 0.872
+ 0.842 0.859 1.873 1.741 0.590 0.744
+ 0.925 0.873 1.887 1.809 0.767 0.713
+ 0.857 0.744 1.739 1.547 0.706 0.674
+ 0.795 0.809 1.734 1.715 0.549 0.654
+ 0.787 0.779 1.509 1.474 0.782 0.571
+ 0.933 0.880 1.695 1.656 0.737 0.803
+ 0.799 0.851 1.740 1.777 0.618 0.682
+ 0.945 0.876 1.811 1.759 0.853 0.777
+ 0.921 0.906 1.954 2.009 0.823 0.765
+ 0.792 0.825 1.624 1.657 0.686 0.668
+ 0.815 0.751 2.204 1.846 0.678 0.546
+ 0.755 0.724 1.508 1.458 0.662 0.595
+ 0.880 0.866 1.786 1.811 0.810 0.819
+ 0.900 0.838 1.902 1.606 0.723 0.677
+ 0.764 0.757 1.743 1.794 0.586 0.541
+ 0.733 0.748 1.863 1.869 0.672 0.752
+ 0.932 0.898 2.028 2.032 0.836 0.805
+ 0.856 0.786 1.390 1.324 0.578 0.610
+ 0.890 0.950 2.187 2.087 0.758 0.718
+ 0.688 0.532 1.650 1.378 0.533 0.482
+ 0.940 0.850 2.334 2.225 0.757 0.731
+ 0.493 0.616 1.037 1.268 0.546 0.615
+ 0.835 0.752 1.509 1.422 0.618 0.664
+ 0.915 0.936 1.971 1.869 0.869 0.868
+
+T01_09    55    7 format
+) Data from Table 1.9 p. 45-46 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T1-9.DAT on disk from book
+) National track records for women
+) Col. 1: 100 m (sec)
+) Col. 2: 200 m (sec)
+) Col. 3: 400 m (sec)
+) Col. 4: 800 m (min)
+) Col. 5: 1500 m (min)
+) Col. 6: 3000 m (min)
+) Col. 7: Marathon (min)
+) Col. 8: Country (skipped by format)
+)"%lf %lf %lf %lf %lf %lf %lf"
+(f6.2,2f7.2,2f6.2,f7.2,f8.2,15x)
+ 11.61  22.94  54.50  2.15  4.43   9.79  178.52 Argentina
+ 11.20  22.35  51.08  1.98  4.13   9.08  152.37 Australia
+ 11.43  23.09  50.62  1.99  4.22   9.34  159.37 Austria
+ 11.41  23.04  52.00  2.00  4.14   8.88  157.85 Belgium
+ 11.46  23.05  53.30  2.16  4.58   9.81  169.98 Bermuda
+ 11.31  23.17  52.80  2.10  4.49   9.77  168.75 Brazil
+ 12.14  24.47  55.00  2.18  4.45   9.51  191.02 Burma
+ 11.00  22.25  50.06  2.00  4.06   8.81  149.45 Canada
+ 12.00  24.52  54.90  2.05  4.23   9.37  171.38 Chile
+ 11.95  24.41  54.97  2.08  4.33   9.31  168.48 China
+ 11.60  24.00  53.26  2.11  4.35   9.46  165.42 Columbia
+ 12.90  27.10  60.40  2.30  4.84  11.10  233.22 CookIs
+ 11.96  24.60  58.25  2.21  4.68  10.43  171.80 Costa_Rica
+ 11.09  21.97  47.99  1.89  4.14   8.92  158.85 Czech
+ 11.42  23.52  53.60  2.03  4.18   8.71  151.75 Denmark
+ 11.79  24.05  56.05  2.24  4.74   9.89  203.88 DomRep
+ 11.13  22.39  50.14  2.03  4.10   8.92  154.23 Finland
+ 11.15  22.59  51.73  2.00  4.14   8.98  155.27 France
+ 10.81  21.71  48.16  1.93  3.96   8.75  157.68 Gdr
+ 11.01  22.39  49.75  1.95  4.03   8.59  148.53 Frg
+ 11.00  22.13  50.46  1.98  4.03   8.62  149.72 GB_NI
+ 11.79  24.08  54.93  2.07  4.35   9.87  182.20 Greece
+ 11.84  24.54  56.09  2.28  4.86  10.54  215.08 Guatemala
+ 11.45  23.06  51.50  2.01  4.14   8.98  156.37 Hungary
+ 11.95  24.28  53.60  2.10  4.32   9.98  188.03 India
+ 11.85  24.24  55.34  2.22  4.61  10.02  201.28 Indonesia
+ 11.43  23.51  53.24  2.05  4.11   8.89  149.38 Ireland
+ 11.45  23.57  54.90  2.10  4.25   9.37  160.48 Israel
+ 11.29  23.00  52.01  1.96  3.98   8.63  151.82 Italy
+ 11.73  24.00  53.73  2.09  4.35   9.20  150.50 Japan
+ 11.73  23.88  52.70  2.00  4.15   9.20  181.05 Kenya
+ 11.96  24.49  55.70  2.15  4.42   9.62  164.65 Korea
+ 12.25  25.78  51.20  1.97  4.25   9.35  179.17 DPRKorea
+ 12.03  24.96  56.10  2.07  4.38   9.64  174.68 Luxemboug
+ 12.23  24.21  55.09  2.19  4.69  10.46  182.17 Malaysia
+ 11.76  25.08  58.10  2.27  4.79  10.90  261.13 Mauritius
+ 11.89  23.62  53.76  2.04  4.25   9.59  158.53 Mexico
+ 11.25  22.81  52.38  1.99  4.06   9.01  152.48 Netherlands
+ 11.55  23.13  51.60  2.02  4.18   8.76  145.48 NZ
+ 11.58  23.31  53.12  2.03  4.01   8.53  145.48 Norway
+ 12.25  25.07  56.96  2.24  4.84  10.69  233.00 PNG
+ 11.76  23.54  54.60  2.19  4.60  10.16  200.37 Philippines
+ 11.13  22.21  49.29  1.95  3.99   8.97  160.82 Poland
+ 11.81  24.22  54.30  2.09  4.16   8.84  151.20 Portugal
+ 11.44  23.46  51.20  1.92  3.96   8.53  165.45 Rumania
+ 12.30  25.00  55.08  2.12  4.52   9.94  182.77 Singapore
+ 11.80  23.98  53.59  2.05  4.14   9.02  162.60 Spain
+ 11.16  22.82  51.79  2.02  4.12   8.84  154.48 Sweden
+ 11.45  23.31  53.11  2.02  4.07   8.77  153.42 Switzerland
+ 11.22  22.62  52.50  2.10  4.38   9.63  177.87 Taipei
+ 11.75  24.46  55.80  2.20  4.72  10.28  168.45 Thailand
+ 11.98  24.44  56.45  2.15  4.37   9.38  201.08 Turkey
+ 10.79  21.83  50.62  1.96  3.95   8.50  142.72 USA
+ 11.06  22.19  49.19  1.89  3.87   8.45  151.22 USSR
+ 12.74  25.85  58.73  2.33  5.81  13.04  306.00 WSamoa
+
+T01_10    76    9 format
+) Data from Table 1.10 p. 47 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T1-10.DAT on disk from book
+) Data on bulls
+) Col. 1: Breed (1 = Angus, 5 = Hereford, 8 = Simental)
+) Col. 2: SalePr = selling price ($)
+) Col. 3: YrHgt = yearling height at shoulder (in)
+) Col. 4: FtFrBody = fat free body wt (lbs)
+) Col. 5: PrctFFB = percent fat-free body weight (%)
+) Col. 6: Frame = size scale (1 = small to 8 = large)
+) Col. 7: BkFat = back fat (in)
+) Col. 8: SaleHt = sale height at shoulder (in)
+) Col. 9: SaleWt = sale weight (lbs)
+)"%lf %lf %lf %lf %lf %lf %lf %lf %lf"
+(f2.0,f5.0,f5.1,f5.0,f4.1,f2.0,f5.2,f6.1,f5.0)
+ 1 2200 51.0 1128 70.9 7 0.25 54.8 1720
+ 1 2250 51.9 1108 72.1 7 0.25 55.3 1575
+ 1 1625 49.9 1011 71.6 6 0.15 53.1 1410
+ 1 4600 53.1  993 68.9 8 0.35 56.4 1595
+ 1 2150 51.2  996 68.6 7 0.25 55.0 1488
+ 1 1225 49.2  985 71.4 6 0.15 51.4 1500
+ 1 2250 51.0  959 72.1 7 0.20 54.0 1522
+ 1 4000 51.5 1060 69.3 7 0.30 55.6 1765
+ 1 1600 50.1  979 71.2 6 0.25 51.5 1365
+ 1 1525 49.6 1083 75.8 6 0.30 54.6 1640
+ 1 1850 50.6 1036 69.2 6 0.15 54.8 1570
+ 1 2850 51.1  870 70.9 7 0.15 52.9 1450
+ 1 2650 51.1  998 65.5 7 0.40 54.6 1505
+ 1 1550 50.2  973 69.5 6 0.40 53.0 1530
+ 1 2000 49.0  893 73.9 6 0.20 51.9 1470
+ 1 2300 49.6  975 68.2 6 0.50 52.9 1842
+ 1 1900 49.1  997 67.9 6 0.30 54.0 1500
+ 1 1400 48.4  946 68.6 5 0.20 51.2 1480
+ 1 1650 50.9  928 67.2 6 0.25 54.1 1480
+ 1 1500 49.5  963 69.4 6 0.35 53.1 1670
+ 1 1375 49.2  911 67.4 6 0.20 53.4 1490
+ 1 1500 48.1 1003 70.5 5 0.25 54.7 1748
+ 1 2400 51.1  915 64.9 7 0.25 54.6 1725
+ 1 1425 48.9  924 72.7 5 0.15 52.1 1374
+ 1 1525 49.4  959 68.4 6 0.15 52.6 1565
+ 1 1800 47.7  944 66.5 5 0.40 53.3 1556
+ 1 2500 50.6  897 67.2 6 0.30 54.9 1688
+ 1 1600 48.9  974 71.0 5 0.30 54.2 1722
+ 1 1300 49.9  872 70.7 6 0.20 53.3 1325
+ 1 1400 48.4  841 71.3 5 0.15 51.5 1365
+ 1 1300 48.6  920 71.4 5 0.15 52.9 1450
+ 1 1400 47.6  974 69.7 5 0.15 51.9 1570
+ 5 2000 50.5 1002 68.8 6 0.20 54.4 1735
+ 5 1300 50.2  998 68.7 6 0.15 52.9 1540
+ 5 1300 49.0 1015 69.8 6 0.30 51.9 1550
+ 5 1300 48.7 1056 72.9 5 0.15 52.6 1525
+ 5 1500 49.6  984 71.4 6 0.15 53.4 1650
+ 5 1225 48.9  934 66.0 5 0.20 52.1 1430
+ 5 2750 49.7  929 66.9 6 0.25 53.3 1688
+ 5 1500 49.9  919 67.1 6 0.20 54.3 1425
+ 5 1325 47.8  931 67.1 5 0.25 51.5 1520
+ 5 1800 49.6  952 69.4 6 0.25 52.3 1512
+ 5 1375 51.0 1002 72.1 7 0.25 51.9 1410
+ 5  975 48.6  936 65.3 5 0.35 51.4 1550
+ 5 1325 48.3  870 65.6 5 0.30 52.5 1588
+ 5 1850 50.1  853 67.9 6 0.15 52.9 1390
+ 5 1025 48.8  843 67.3 5 0.20 50.4 1390
+ 5 1000 47.7  913 68.2 5 0.15 49.4 1345
+ 5  975 47.2  844 70.6 5 0.15 50.1 1285
+ 8 1750 54.0 1252 76.5 8 0.15 56.9 1648
+ 8 1450 53.3 1383 81.4 8 0.20 59.6 1904
+ 8 1200 52.8 1076 74.0 7 0.15 55.5 1615
+ 8 2000 53.5 1175 74.5 8 0.10 57.4 1686
+ 8 1450 53.2 1027 71.2 8 0.10 56.9 1696
+ 8 1800 52.3 1116 71.1 7 0.10 57.5 1620
+ 8 1525 51.8 1095 71.1 7 0.15 54.6 1712
+ 8 1925 52.7 1141 78.5 7 0.15 55.6 1572
+ 8 3450 54.8 1039 70.6 8 0.10 58.7 1600
+ 8 1650 52.8  981 74.1 7 0.10 56.9 1750
+ 8 1900 52.4  933 71.5 7 0.10 56.2 1640
+ 8 1850 51.2 1083 74.5 7 0.20 55.9 1752
+ 8 1550 52.3 1143 77.7 7 0.10 56.1 1785
+ 8 1825 53.0 1055 76.8 8 0.10 56.7 1526
+ 8 1475 52.9 1037 75.0 7 0.10 55.5 1406
+ 8 2200 51.8 1076 74.5 7 0.15 55.8 1475
+ 8 1850 53.1  964 70.8 8 0.10 55.5 1535
+ 8 1550 51.2 1057 74.8 7 0.10 55.5 1520
+ 8 1250 50.8 1040 74.5 6 0.10 55.8 1516
+ 8 1350 52.7 1079 75.5 7 0.15 56.1 1595
+ 8 1725 51.4 1034 71.2 7 0.10 56.0 1655
+ 8 1750 50.7 1012 71.6 6 0.10 54.3 1480
+ 8 1450 51.4  997 73.4 7 0.10 55.2 1454
+ 8 1200 49.8  991 70.8 6 0.15 54.6 1475
+ 8 1425 50.0  928 70.8 6 0.10 53.9 1375
+ 8 1250 50.1  990 71.0 6 0.10 54.9 1564
+ 8 1500 51.7  992 70.6 7 0.15 55.1 1458
+
+T03_01    6    2 format
+) Data from Table 3.1 p. 121 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T3-1.DAT on disk from book
+) Solid waste
+) Col. 0: Year (1960 - 1985, skipped by format)
+) Col. 1: x1 = paper (million tons)
+) Col. 2: x2 = plastics (million tons)
+)"4x %f %f"
+(4x,f5.1,f4.1)
+1960 29.8 0.4
+1965 37.9 1.4
+1970 43.9 3.0
+1975 42.6 4.4
+1980 53.9 7.6
+1985 61.7 9.8
+
+T04_01    42  format
+) Data from Table 4.1 p. 181 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T4-1.DAT on disk from book
+) Radiation data (door closed)
+) Col. 1: Radiation emitted through closed doors of 42 ovens
+)"%lf"
+(f5.2)
+ 0.15
+ 0.09
+ 0.18
+ 0.10
+ 0.05
+ 0.12
+ 0.08
+ 0.05
+ 0.08
+ 0.10
+ 0.07
+ 0.02
+ 0.01
+ 0.10
+ 0.10
+ 0.10
+ 0.02
+ 0.10
+ 0.01
+ 0.40
+ 0.10
+ 0.05
+ 0.03
+ 0.05
+ 0.15
+ 0.10
+ 0.15
+ 0.09
+ 0.08
+ 0.18
+ 0.10
+ 0.20
+ 0.11
+ 0.30
+ 0.02
+ 0.20
+ 0.20
+ 0.30
+ 0.30
+ 0.40
+ 0.30
+ 0.05
+
+T04_03    30    4 format
+) Data from Table 4.3 p. 187 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T4-3.DAT on disk from book
+) Omitted was the last column (d^2) as this can be computed directly
+) using distcomp(T04_03)
+) Four measurements of stiffness
+) Col. 1: x1 (from shock wave down board)
+) Col. 2: x2 (from vibrating board)
+) Col. 3: x3 (from static test)
+) Col. 4: x4 (from static test)
+)"%lf %lf %lf %lf"
+(4f5.0)
+ 1889 1651 1561 1778
+ 2403 2048 2087 2197
+ 2119 1700 1815 2222
+ 1645 1627 1110 1533
+ 1976 1916 1614 1883
+ 1712 1712 1439 1546
+ 1943 1685 1271 1671
+ 2104 1820 1717 1874
+ 2983 2794 2412 2581
+ 1745 1600 1384 1508
+ 1710 1591 1518 1667
+ 2046 1907 1627 1898
+ 1840 1841 1595 1741
+ 1867 1685 1493 1678
+ 1859 1649 1389 1714
+ 1954 2149 1180 1281
+ 1325 1170 1002 1176
+ 1419 1371 1252 1308
+ 1828 1634 1602 1755
+ 1725 1594 1313 1646
+ 2276 2189 1547 2111
+ 1899 1614 1422 1477
+ 1633 1513 1290 1516
+ 2061 1867 1646 2037
+ 1856 1493 1356 1533
+ 1727 1412 1238 1469
+ 2168 1896 1701 1834
+ 1655 1675 1414 1597
+ 2326 2301 2065 2234
+ 1490 1382 1214 1284
+
+T04_05    42 format
+) Data from Table 4.5 p. 200 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T4-5.DAT on disk from book
+) Radiation data (door open)
+) Col. 1: Radiation emitted through open doors of 42 ovens
+)"%lf"
+(f5.2)
+ 0.30
+ 0.09
+ 0.30
+ 0.10
+ 0.10
+ 0.12
+ 0.09
+ 0.10
+ 0.09
+ 0.10
+ 0.07
+ 0.05
+ 0.01
+ 0.45
+ 0.12
+ 0.20
+ 0.04
+ 0.10
+ 0.01
+ 0.60
+ 0.12
+ 0.10
+ 0.05
+ 0.05
+ 0.15
+ 0.30
+ 0.15
+ 0.09
+ 0.09
+ 0.28
+ 0.10
+ 0.10
+ 0.10
+ 0.30
+ 0.12
+ 0.25
+ 0.20
+ 0.40
+ 0.33
+ 0.32
+ 0.12
+ 0.12
+
+T04_01_05     42     2 format
+) Combined data from Tables 4.1 (p. 181) and 4.5 p. 200 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from files T4-1.DAT and T4-5.DAT on
+) disk from book
+) Radiation data
+) Col. 1: Radiation emitted through closed doors of oven
+) Col. 2: Radiation emitted through open doors of oven
+)"%lf %lf"
+(f5.2,f6.2)
+ 0.15  0.30
+ 0.09  0.09
+ 0.18  0.30
+ 0.10  0.10
+ 0.05  0.10
+ 0.12  0.12
+ 0.08  0.09
+ 0.05  0.10
+ 0.08  0.09
+ 0.10  0.10
+ 0.07  0.07
+ 0.02  0.05
+ 0.01  0.01
+ 0.10  0.45
+ 0.10  0.12
+ 0.10  0.20
+ 0.02  0.04
+ 0.10  0.10
+ 0.01  0.01
+ 0.40  0.60
+ 0.10  0.12
+ 0.05  0.10
+ 0.03  0.05
+ 0.05  0.05
+ 0.15  0.15
+ 0.10  0.30
+ 0.15  0.15
+ 0.09  0.09
+ 0.08  0.09
+ 0.18  0.28
+ 0.10  0.10
+ 0.20  0.10
+ 0.11  0.10
+ 0.30  0.30
+ 0.02  0.12
+ 0.20  0.25
+ 0.20  0.20
+ 0.30  0.40
+ 0.30  0.33
+ 0.40  0.32
+ 0.30  0.12
+ 0.05  0.12
+
+P05_09     2  STRUC
+) Data from Problem 9 in Chapter 5 p. 261-262 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P5-9.DAT on disk from book
+)
+) The data set is a structure with two components, 'mean' and 'covar'
+) containing, respectively, the sample mean and sample covariance
+) matrix of 6 measurements on 61 Alaskan bears.
+) The data set is the same as P08_23
+) Variable 1: Weight (kg)
+) Variable 2: Body length (cm)
+) Variable 3: Neck (cm)
+) Variable 4: Girth (cm)
+) Variable 5: Head length (cm)
+) Variable 6: Head width (cm)
+)
+) The structure is what you would get from tabs(y,mean:T,covar:T)
+) when y is a 61 by 6 matrix containing the actual values
+
+P05_09$mean     6 columns
+) Sample means
+)"%lf %lf %lf %lf %lf %lf"
+   95.52  164.38   55.69   93.39   17.98   31.13
+
+P05_09$covar     6     6
+) Sample covariance matrix
+)"%lf %lf %lf %lf %lf %lf"
+ 3266.46 1343.97  731.54 1175.50  162.68  238.37
+ 1343.97  721.91  324.25  537.35   80.17  117.73
+  731.54  324.25  179.28  281.17   39.15   56.80
+ 1175.50  537.35  281.17  474.98   63.73   94.85
+  162.68   80.17   39.15   63.73    9.95   13.88
+  238.37  117.73   56.80   94.85   13.88   21.26
+
+P05_11    9    2 format
+) Data from Problem 11 in Chapter 5 p. 262 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P5-9.DAT on disk from book
+) Mineral analyses of nine ancient Peruvian hairs
+) Col. 1: x1 = Cr = chromium (ppm)
+) Col. 2: x2 = Sr = strontium (ppm)
+)"%lf %lf"
+(2f6.2)
+  0.48 12.57
+ 40.53 73.68
+  2.19 11.13
+  0.55 20.03
+  0.74 20.29
+  0.66  0.78
+  0.93  4.64
+  0.37  0.43
+  0.22  1.08
+
+T05_01    20    3 format
+) Data from Table 5.1 p. 215 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T5-1.DAT on disk from book
+) Sweat data
+) Perspiration from 20 healthy females
+) Col. 1: X1 = sweat rate
+) Col. 2: X2 = Na = sodium
+) Col. 3: X3 = K = potassium
+)"%lf %lf %lf"
+(f4.1,2f5.1)
+ 3.7 48.5  9.3
+ 5.7 65.1  8.0
+ 3.8 47.2 10.9
+ 3.2 53.2 12.0
+ 3.1 55.5  9.7
+ 4.6 36.1  7.9
+ 2.4 24.8 14.0
+ 7.2 33.1  7.6
+ 6.7 47.4  8.5
+ 5.4 54.1 11.3
+ 3.9 36.9 12.7
+ 4.5 58.8 12.3
+ 3.5 27.8  9.8
+ 4.5 40.2  8.4
+ 1.5 13.5 10.1
+ 8.5 56.4  7.1
+ 4.5 71.6  8.2
+ 6.5 52.8 10.9
+ 4.1 44.1 11.2
+ 5.5 40.9  9.4
+
+T05_02    87    3 format
+) Data from Table 5.2 p. 228 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T5-2.DAT on disk from book
+) College Test Data
+) Subtest scores from CLEP (X1) and CQT (X2 and X3)
+) Col. 1: X1 = Social science and history
+) Col. 2: X2 = Verbal
+) Col. 3: X3 = Science
+)"%lf %lf %lf"
+(f4.0,2f3.0)
+ 468 41 26
+ 428 39 26
+ 514 53 21
+ 547 67 33
+ 614 61 27
+ 501 67 29
+ 421 46 22
+ 527 50 23
+ 527 55 19
+ 620 72 32
+ 587 63 31
+ 541 59 19
+ 561 53 26
+ 468 62 20
+ 614 65 28
+ 527 48 21
+ 507 32 27
+ 580 64 21
+ 507 59 21
+ 521 54 23
+ 574 52 25
+ 587 64 31
+ 488 51 27
+ 488 62 18
+ 587 56 26
+ 421 38 16
+ 481 52 26
+ 428 40 19
+ 640 65 25
+ 574 61 28
+ 547 64 27
+ 580 64 28
+ 494 53 26
+ 554 51 21
+ 647 58 23
+ 507 65 23
+ 454 52 28
+ 427 57 21
+ 521 66 26
+ 468 57 14
+ 587 55 30
+ 507 61 31
+ 574 54 31
+ 507 53 23
+ 494 41 24
+ 541 47 25
+ 362 36 17
+ 408 28 17
+ 594 68 23
+ 501 25 26
+ 687 75 33
+ 633 52 31
+ 647 67 29
+ 647 65 34
+ 614 59 25
+ 633 65 28
+ 448 55 24
+ 408 51 19
+ 441 35 22
+ 435 60 20
+ 501 54 21
+ 507 42 24
+ 620 71 36
+ 415 52 20
+ 554 69 30
+ 348 28 18
+ 468 49 25
+ 507 54 26
+ 527 47 31
+ 527 47 26
+ 435 50 28
+ 660 70 25
+ 733 73 33
+ 507 45 28
+ 527 62 29
+ 428 37 19
+ 481 48 23
+ 507 61 19
+ 527 66 23
+ 488 41 28
+ 607 69 28
+ 561 59 34
+ 614 70 23
+ 527 49 30
+ 474 41 16
+ 441 47 26
+ 607 67 32
+
+T05_08    16    5 format
+) Data from Table 5.8 p. 240 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T5-8.DAT on disk from book
+) Five types of overtime hours for the Madison, WI, Police Dept.
+) Col. 1: x1 = legal appearances hours
+) Col. 2: x2 = extrordinary even hours
+) Col. 3: x3 = holdover hours
+) Col. 4: x4 = compensatory overtimne allowed hours
+) Col. 5: x5 = meeting hours
+) Each case represents 12 pay periods, about .5 year
+)"%lf %lf %lf %lf %lf"
+(3f5.0,f6.0,f5.0)
+ 3387 2200 1181 14861  236
+ 3109  875 3532 11367  310
+ 2670  957 2502 13329 1182
+ 3125 1758 4510 12328 1208
+ 3469  868 3032 12847 1385
+ 3120  398 2130 13979 1053
+ 3671 1603 1982 13528 1046
+ 4531  523 4675 12699 1100
+ 3678 2034 2354 13534 1349
+ 3238 1136 4606 11609 1150
+ 3135 5326 3044 14189 1216
+ 5217 1658 3340 15052  660
+ 3728 1945 2111 12236  299
+ 3506  344 1291 15482  206
+ 3824  807 1365 14900  239
+ 3516 1223 1175 15078  161
+
+T05_08A    16    6 format
+) Data from Table 5.8 and problem 8.24 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T5-8A.DAT on disk from book
+) Variables x1 - x5 are from Table 5.8 on p. 240 (data set T05_08);
+) x6 is from problem 8.24 on p. 475
+) Six types of overtime hours for the Madison, WI, Police Dept.
+) Col. 1: x1 = legal appearances hours
+) Col. 2: x2 = extrordinary even hours
+) Col. 3: x3 = holdover hours
+) Col. 4: x4 = compensatory overtimne allowed hours
+) Col. 5: x5 = meeting hours
+) Col. 6: x6 = regular overtime hours
+) Each case represents 12 pay periods, about .5 year
+)"%lf %lf %lf %lf %lf %lf"
+(3f5.0,f6.0,f5.0,f6.0)
+ 3387 2200 1181 14861  236  6187
+ 3109  875 3532 11367  310  7336
+ 2670  957 2502 13329 1182  6988
+ 3125 1758 4510 12328 1208  6964
+ 3469  868 3032 12847 1385  8425
+ 3120  398 2130 13979 1053  6778
+ 3671 1603 1982 13528 1046  5922
+ 4531  523 4675 12699 1100  7307
+ 3678 2034 2354 13534 1349  7679
+ 3238 1136 4606 11609 1150  8259
+ 3135 5326 3044 14189 1216 10954
+ 5217 1658 3340 15052  660  9353
+ 3728 1945 2111 12236  299  6291
+ 3506  344 1291 15482  206  4969
+ 3824  807 1365 14900  239  4825
+ 3516 1223 1175 15078  161  6019
+
+T05_09     40      4 format
+) Data from Table 5.9 p. 245 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T5-9.DAT on disk from book
+) Welder data
+) Col. 1: x1 = Voltage
+) Col. 2: x2 = Current
+) Col. 3: x3 = feed speed
+) Col. 4: x4 = gas flow
+)"%lf %lf %lf %lf"
+(f5.1,f5.0,f7.1,f6.1)
+ 23.0  276  289.6  51.0
+ 22.0  281  289.0  51.7
+ 22.8  270  288.2  51.3
+ 22.1  278  288.0  52.3
+ 22.5  275  288.0  53.0
+ 22.2  273  288.0  51.0
+ 22.0  275  290.0  53.0
+ 22.1  268  289.0  54.0
+ 22.5  277  289.0  52.0
+ 22.5  278  289.0  52.0
+ 22.3  269  287.0  54.0
+ 21.8  274  287.6  52.0
+ 22.3  270  288.4  51.0
+ 22.2  273  290.2  51.3
+ 22.1  274  286.0  51.0
+ 22.1  277  287.0  52.0
+ 21.8  277  287.0  51.0
+ 22.6  276  290.0  51.0
+ 22.3  278  287.0  51.7
+ 23.0  266  289.1  51.0
+ 22.9  271  288.3  51.0
+ 21.3  274  289.0  52.0
+ 21.8  280  290.0  52.0
+ 22.0  268  288.3  51.0
+ 22.8  269  288.7  52.0
+ 22.0  264  290.0  51.0
+ 22.5  273  288.6  52.0
+ 22.2  269  288.2  52.0
+ 22.6  273  286.0  52.0
+ 21.7  283  290.0  52.7
+ 21.9  273  288.7  55.3
+ 22.3  264  287.0  52.0
+ 22.2  263  288.0  52.0
+ 22.3  266  288.6  51.7
+ 22.0  263  288.0  51.7
+ 22.8  272  289.0  52.3
+ 22.0  277  287.7  53.3
+ 22.7  272  289.0  52.0
+ 22.6  274  287.2  52.7
+ 22.7  270  290.0  51.0
+
+T05_11    30    2 format
+) Data from Table 5.11 p. 267 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T5-11.DAT on disk from book
+) Ed. 4 Table 5.10
+) Lumber data
+) Col. 1: x1 = stiffness = modulus of elasticity
+) Col. 2: x2 = bending strength
+)"%lf %lf"
+(f5.0,f6.0)
+ 1232  4175
+ 1115  6652
+ 2205  7612
+ 1897 10914
+ 1932 10850
+ 1612  7627
+ 1598  6954
+ 1804  8365
+ 1752  9469
+ 2067  6410
+ 2365 10327
+ 1646  7320
+ 1579  8196
+ 1880  9709
+ 1773 10370
+ 1712  7749
+ 1932  6818
+ 1820  9307
+ 1900  6457
+ 2426 10102
+ 1558  7414
+ 1470  7556
+ 1858  7833
+ 1587  8309
+ 2208  9559
+ 1487  6255
+ 2206 10723
+ 2332  5430
+ 2540 12090
+ 2322 10072
+
+T05_12    45    2 format
+) Data from Table 5.12 p. 268 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T5-12.DAT on disk from book
+) Bird data (female hook-billed kites)
+) Col. 1: x1 = tail length
+) Col. 2: x2 = wing length
+)"%lf %lf"
+(2f4.0)
+ 191 284
+ 197 285
+ 208 288
+ 180 273
+ 180 275
+ 188 280
+ 210 283
+ 196 288
+ 191 271
+ 179 257
+ 208 289
+ 202 285
+ 200 272
+ 192 282
+ 199 280
+ 186 266
+ 197 285
+ 201 295
+ 190 282
+ 209 305
+ 187 285
+ 207 297
+ 178 268
+ 202 271
+ 205 285
+ 190 280
+ 189 277
+ 211 310
+ 216 305
+ 189 274
+ 173 271
+ 194 280
+ 198 300
+ 180 272
+ 190 292
+ 191 286
+ 196 285
+ 207 286
+ 209 303
+ 179 261
+ 186 262
+ 174 245
+ 181 250
+ 189 262
+ 188 258
+
+P06_08    12    3 format
+) Data from Problem 8 in Chapter 6 on p. 333 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P6-8.DAT on disk from book
+) Treatment number was moved to column 1 from column 3
+) Col. 1: Treatment (1, 2 or 3)
+) Col. 2: x1
+) Col. 3: x2
+)"%lf %lf"
+(f2.0,2f3.0)
+ 1  6  7
+ 1  5  9
+ 1  8  6
+ 1  4  9
+ 1  7  9
+ 2  3  3
+ 2  1  6
+ 2  2  3
+ 3  2  3
+ 3  5  1
+ 3  3  1
+ 3  2  3
+
+P06_13    12    4 format
+) Data from Problem 13 in Chapter 6 p. 335 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P6-13.DAT on disk from book
+) Factors 1 and 2 moved to columns 1 and 2 from columns 3 and 4
+) Col. 1: Factor 1 (1 - 3) {rep(run(3),4)}
+) Col. 2: Factor 2 (1 - 4) {rep(run(4),rep(3,4))}
+) Col. 3: x1
+) Col. 4: x2
+)"%lf %lf %lf %lf"
+(f2.0,3f3.0)
+ 1  1  6  8
+ 2  1  3  8
+ 3  1 -3  2
+ 1  2  4  6
+ 2  2 -3  2
+ 3  2 -4 -5
+ 1  3  8 12
+ 2  3  4  3
+ 3  3  3 -3
+ 1  4  2  6
+ 2  4 -4  3
+ 3  4 -4 -6
+
+P06_14    12    4 format
+) Data from Problem 14 in Chapter 6 p. 336 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P6-14.DAT on disk from book
+) Factors 1 and 2 moved to columns 1 and 2 from columns 3 and 4
+) Col. 1: Factor 1 (1 - 3) {rep(run(3),4)}
+) Col. 2: Factor 2 (1 - 4) {rep(run(4),rep(3,4))}
+) Col. 3: x1
+) Col. 4: x2
+)"%lf %lf %lf %lf"
+(f2.0,f3.0,2f4.0)
+ 1  1  14   8
+ 2  1   1   6
+ 3  1   3  -2
+ 1  2   6   2
+ 2  2   5  12
+ 3  2  -2   7
+ 1  3   8   2
+ 2  3   0  15
+ 3  3 -11   1
+ 1  4  16  -4
+ 2  4   2   7
+ 3  4  -6   6
+
+T06_01    11    4 format
+) Data from Table 6.1 p. 275 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-1.DAT on disk from book
+) Effluent data
+) Col. 1: BOD1 (biochemical oxygen demand) commercial lab measurement
+) Col. 2: SS1  (suspended solids) commercial lab measurement
+) Col. 3: BOD2 (biochemical oxygen demand) state lab of hygiene measurement
+) Col. 4: SS2  (suspended solids) state lab of hygiene measurement
+)"%lf %lf %lf %lf"
+(f3.0,f4.0,2f3.0)
+  6  27 25 15
+  6  23 28 13
+ 18  64 36 22
+  8  44 35 29
+ 11  30 15 31
+ 34  75 44 64
+ 28  26 42 30
+ 71 124 54 64
+ 43  54 34 56
+ 33  30 29 20
+ 20  14 39 21
+
+T06_02    19    4 format
+) Data from Table 6.2 p. 281 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-2.DAT on disk from book
+) Sleeping-dog data
+) Col. 1: Response for treatment 1 (High Co_2, pressure w/o H)
+) Col. 2: Response for treatment 2 (Low Co_2, pressure w/o H)
+) Col. 3: Response for treatment 3 (High Co_2, pressure with H)
+) Col. 4: Response for treatment 4 (Low Co_2, pressure with H)
+)"%lf %lf %lf %lf"
+(4f4.0)
+ 426 609 556 600
+ 253 236 392 395
+ 359 433 349 357
+ 432 431 522 600
+ 405 426 513 513
+ 324 438 507 539
+ 310 312 410 456
+ 326 326 350 504
+ 375 447 547 548
+ 286 286 403 422
+ 349 382 473 497
+ 429 410 488 547
+ 348 377 447 514
+ 412 473 472 446
+ 347 326 455 468
+ 434 458 637 524
+ 364 367 432 469
+ 420 395 508 531
+ 397 556 645 625
+
+T06_04    20    5 format
+) Data from Table 6.4 p. 313 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-4.DAT on disk from book
+) Plastic film data
+) Col. 1: Factor 1 (0 = Low = -10% change, 1 = High = +10% change)
+) Col. 2: Factor 2 (0 = Low = 1.0% additive, 1 = High = 1.5% additive)
+) Col. 3: x1 = tear resistance
+) Col. 4: x2 = gloss
+) Col. 5: x3 = opacity
+)"%lf %lf %lf %lf %lf"
+(2f2.0,f4.1,f5.1,f4.1)
+ 0 0 6.5  9.5 4.4
+ 0 0 6.2  9.9 6.4
+ 0 0 5.8  9.6 3.0
+ 0 0 6.5  9.6 4.1
+ 0 0 6.5  9.2 0.8
+ 0 1 6.9  9.1 5.7
+ 0 1 7.2 10.0 2.0
+ 0 1 6.9  9.9 3.9
+ 0 1 6.1  9.5 1.9
+ 0 1 6.3  9.4 5.7
+ 1 0 6.7  9.1 2.8
+ 1 0 6.6  9.3 4.1
+ 1 0 7.2  8.3 3.8
+ 1 0 7.1  8.4 1.6
+ 1 0 6.8  8.5 3.4
+ 1 1 7.1  9.2 8.4
+ 1 1 7.0  8.8 5.2
+ 1 1 7.2  9.7 6.9
+ 1 1 7.5 10.1 2.7
+ 1 1 7.6  9.2 1.9
+
+T06_05    15    4 format
+) Data from Table 6.5 p. 323
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-5.DAT on disk from book
+) Calcium measurements on the dominant ulna control group
+) Col. 1: Initial measurement
+) Col. 2: 1 year measurement
+) Col. 3: 2 year measurement
+) Col. 4: 3 year measurement
+)"%lf %lf %lf %lf"
+(f5.1,3f6.1)
+ 87.3  86.9  86.7  75.5
+ 59.0  60.2  60.0  53.6
+ 76.7  76.5  75.7  69.5
+ 70.6  76.1  72.1  65.3
+ 54.9  55.1  57.2  49.0
+ 78.2  75.3  69.1  67.6
+ 73.7  70.8  71.8  74.6
+ 61.8  68.7  68.2  57.4
+ 85.3  84.4  79.2  67.0
+ 82.3  86.9  79.4  77.4
+ 68.6  65.4  72.3  60.8
+ 67.8  69.2  66.3  57.9
+ 66.2  67.0  67.0  56.2
+ 81.0  82.3  86.8  73.9
+ 72.3  74.6  75.3  66.1
+
+T06_06    16    4 format
+) Data from Table 6.6 p. 324 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-6.DAT on disk from book
+) Calcium measurements on the dominant ulna treatment group
+) Col. 1: Initial measurement
+) Col. 2: 1 year measurement
+) Col. 3: 2 year measurement
+) Col. 4: 3 year measurement
+)"%lf %lf %lf %lf"
+(f5.1,3f6.1)
+ 83.8 85.5 86.2 81.2
+ 65.3 66.9 67.0 60.6
+ 81.2 79.5 84.5 75.2
+ 75.4 76.7 74.3 66.7
+ 55.3 58.3 59.1 54.2
+ 70.3 72.3 70.6 68.6
+ 76.5 79.9 80.4 71.6
+ 66.0 70.9 70.3 64.1
+ 76.7 79.0 76.9 70.3
+ 77.2 74.0 77.8 67.9
+ 67.3 70.7 68.9 65.9
+ 50.3 51.4 53.6 48.0
+ 57.7 57.0 57.5 51.5
+ 74.3 77.7 72.6 68.0
+ 74.0 74.7 74.5 65.7
+ 57.3 56.0 64.7 53.0
+
+T06_05_06    31    5 format
+) Combined data from Tables 6.5 and 6.6 pp. 323 and 324 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) (data sets T06_05 and T06_06)
+) In this combined file an additional column designating group,
+) control or treatment
+) Calcium measurements on the dominant ulna of older women
+) Col. 1: Group (1 = control, 2 = treatment)
+) Col. 2: Initial measurement
+) Col. 3: 1 year measurement
+) Col. 4: 2 year measurement
+) Col. 5: 3 year measurement
+)"%lf %lf %lf %lf %lf"
+(f2.0,4f6.1)
+ 1  87.3  86.9  86.7  75.5
+ 1  59.0  60.2  60.0  53.6
+ 1  76.7  76.5  75.7  69.5
+ 1  70.6  76.1  72.1  65.3
+ 1  54.9  55.1  57.2  49.0
+ 1  78.2  75.3  69.1  67.6
+ 1  73.7  70.8  71.8  74.6
+ 1  61.8  68.7  68.2  57.4
+ 1  85.3  84.4  79.2  67.0
+ 1  82.3  86.9  79.4  77.4
+ 1  68.6  65.4  72.3  60.8
+ 1  67.8  69.2  66.3  57.9
+ 1  66.2  67.0  67.0  56.2
+ 1  81.0  82.3  86.8  73.9
+ 1  72.3  74.6  75.3  66.1
+ 2  83.8  85.5  86.2  81.2
+ 2  65.3  66.9  67.0  60.6
+ 2  81.2  79.5  84.5  75.2
+ 2  75.4  76.7  74.3  66.7
+ 2  55.3  58.3  59.1  54.2
+ 2  70.3  72.3  70.6  68.6
+ 2  76.5  79.9  80.4  71.6
+ 2  66.0  70.9  70.3  64.1
+ 2  76.7  79.0  76.9  70.3
+ 2  77.2  74.0  77.8  67.9
+ 2  67.3  70.7  68.9  65.9
+ 2  50.3  51.4  53.6  48.0
+ 2  57.7  57.0  57.5  51.5
+ 2  74.3  77.7  72.6  68.0
+ 2  74.0  74.7  74.5  65.7
+ 2  57.3  56.0  64.7  53.0
+
+T06_07       60     3 format
+) Data from Table 6.7 p. 330 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-7.DAT on disk from book
+) Lizard data for two genera
+) Genera recoded as 1 and 2 and moved to column 1 from column 3
+) Col. 1: genus (1 = C = Cnemidophorus, 2 = S = Sceloporus)
+) Col. 2: mass (gm)
+) Col. 3: svl = snout-vent length (mm)
+)"%lf %lf %lf"
+(f2.0,f8.3,f6.1)
+ 1   7.513  74.0
+ 1   5.032  69.5
+ 1   5.867  72.0
+ 1  11.088  80.0
+ 1   2.419  56.0
+ 1  13.610  94.0
+ 1  18.247  95.5
+ 1  16.832  99.5
+ 1  15.910  97.0
+ 1  17.035  90.5
+ 1  16.526  91.0
+ 1   4.530  67.0
+ 1   7.230  75.0
+ 1   5.200  69.5
+ 1  13.450  91.5
+ 1  14.080  91.0
+ 1  14.665  90.0
+ 1   6.092  73.0
+ 1   5.264  69.5
+ 1  16.902  94.0
+ 2  13.911  77.0
+ 2   5.236  62.0
+ 2  37.331 108.0
+ 2  41.781 115.0
+ 2  31.995 106.0
+ 2   3.962  56.0
+ 2   4.367  60.5
+ 2   3.048  52.0
+ 2   4.838  60.0
+ 2   6.525  64.0
+ 2  22.610  96.0
+ 2  13.342  79.5
+ 2   4.109  55.5
+ 2  12.369  75.0
+ 2   7.120  64.5
+ 2  21.077  87.5
+ 2  42.989 109.0
+ 2  27.201  96.0
+ 2  38.901 111.0
+ 2  19.747  84.5
+ 2  14.666  80.0
+ 2   4.790  62.0
+ 2   5.020  61.5
+ 2   5.220  62.0
+ 2   5.690  64.0
+ 2   6.763  63.0
+ 2   9.977  71.0
+ 2   8.831  69.5
+ 2   9.493  67.5
+ 2   7.811  66.0
+ 2   6.685  64.5
+ 2  11.980  79.0
+ 2  16.520  84.0
+ 2  13.630  81.0
+ 2  13.700  82.5
+ 2  10.350  74.0
+ 2   7.900  68.5
+ 2   9.103  70.0
+ 2  13.216  77.5
+ 2   9.787  70.0
+
+T06_08       32     4 format
+) Data from Table 6.8 p. 338 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-8.DAT on disk from book
+) Number parity data
+) Col. 1: x1 = WordDiff
+) Col. 2: x2 = WordSame
+) Col. 3: x3 = ArabicDiff
+) Col. 4: x4 = ArabicSame
+)"%lf %lf %lf %lf"
+(f7.1,3f8.1)
+  869.0   860.5   691.0   601.0
+  995.0   875.0   678.0   659.0
+ 1056.0   930.5   833.0   826.0
+ 1126.0   954.0   888.0   728.0
+ 1044.0   909.0   865.0   839.0
+  925.0   856.5  1059.5   797.0
+ 1172.5   896.5   926.0   766.0
+ 1408.5  1311.0   854.0   986.0
+ 1028.0   887.0   915.0   735.0
+ 1011.0   863.0   761.0   657.0
+  726.0   674.0   663.0   583.0
+  982.0   894.0   831.0   640.0
+ 1225.0  1179.0  1037.0   905.5
+  731.0   662.0   662.5   624.0
+  975.5   872.5   814.0   735.0
+ 1130.5   811.0   843.0   657.0
+  945.0   909.0   867.5   754.0
+  747.0   752.5   777.0   687.5
+  656.5   659.5   572.0   539.0
+  919.0   833.0   752.0   611.0
+  751.0   785.0   789.0   735.0
+  774.0   735.0   671.0   612.0
+  941.0   931.0   901.5   700.0
+  751.0   785.0   789.0   735.0
+  767.0   737.5   724.0   639.0
+  813.5   750.5   711.0   625.0
+ 1289.5  1140.0   904.5   784.5
+ 1096.5  1009.0  1076.0   983.0
+ 1083.0   958.0   918.0   746.5
+ 1114.0  1046.0  1081.0   796.0
+  708.0   669.0   657.0   572.5
+ 1201.0   925.0  1004.5   673.5
+
+T06_09    48    4 format
+) Data from Table 6.9 p. 339 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-9.DAT on disk from book
+) The gender column containing "female" or "male" was deleted and
+) a new column with gender coded as 1 (female) or 2 (male) inserted
+) at start
+) Was Table 6.7 in Edition 4
+) Col. 1: Gender (1 = female, 2 = male)
+) Col. 2: x1 = length
+) Col. 3: x2 = width
+) Col. 4: x3 = height
+)"%lf %lf %lf %lf"
+(f2.0,2f4.0,f3.0)
+ 1  98  81 38
+ 1 103  84 38
+ 1 103  86 42
+ 1 105  86 42
+ 1 109  88 44
+ 1 123  92 50
+ 1 123  95 46
+ 1 133  99 51
+ 1 133 102 51
+ 1 133 102 51
+ 1 134 100 48
+ 1 136 102 49
+ 1 138  98 51
+ 1 138  99 51
+ 1 141 105 53
+ 1 147 108 57
+ 1 149 107 55
+ 1 153 107 56
+ 1 155 115 63
+ 1 155 117 60
+ 1 158 115 62
+ 1 159 118 63
+ 1 162 124 61
+ 1 177 132 67
+ 2  93  74 37
+ 2  94  78 35
+ 2  96  80 35
+ 2 101  84 39
+ 2 102  85 38
+ 2 103  81 37
+ 2 104  83 39
+ 2 106  83 39
+ 2 107  82 38
+ 2 112  89 40
+ 2 113  88 40
+ 2 114  86 40
+ 2 116  90 43
+ 2 117  90 41
+ 2 117  91 41
+ 2 119  93 41
+ 2 120  89 40
+ 2 120  93 44
+ 2 121  95 42
+ 2 125  93 45
+ 2 127  96 45
+ 2 128  95 45
+ 2 131  95 46
+ 2 135 106 47
+
+T06_10    59    4 format
+) Data from Table 6.10 on p. 340 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-10.DAT on disk from book
+) The fuel column containing "gasoline" or "diesel" was deleted and
+) a new column with fuel type coded as 1 (gasoline) or 2 (diesel)
+) inserted at start
+) Milk transportation-cost data
+) Col. 1: Fuel type (1 = gasoline, 2 = diesel)
+) Col. 2: X1 = fuel cost (cents/mi)
+) Col. 3: X2 = repair cost (cents/mi)
+) Col. 4: X3 = capital cost (cents/mi)
+)"%lf %lf %lf %lf"
+(f2.0,3f7.2)
+ 1  16.44  12.43  11.23
+ 1   7.19   2.70   3.92
+ 1   9.92   1.35   9.75
+ 1   4.24   5.78   7.78
+ 1  11.20   5.05  10.67
+ 1  14.25   5.78   9.88
+ 1  13.50  10.98  10.60
+ 1  13.32  14.27   9.45
+ 1  29.11  15.09   3.28
+ 1  12.68   7.61  10.23
+ 1   7.51   5.80   8.13
+ 1   9.90   3.63   9.13
+ 1  10.25   5.07  10.17
+ 1  11.11   6.15   7.61
+ 1  12.17  14.26  14.39
+ 1  10.24   2.59   6.09
+ 1  10.18   6.05  12.14
+ 1   8.88   2.70  12.23
+ 1  12.34   7.73  11.68
+ 1   8.51  14.02  12.01
+ 1  26.16  17.44  16.89
+ 1  12.95   8.24   7.18
+ 1  16.93  13.37  17.59
+ 1  14.70  10.78  14.58
+ 1  10.32   5.16  17.00
+ 1   8.98   4.49   4.26
+ 1   9.70  11.59   6.83
+ 1  12.72   8.63   5.59
+ 1   9.49   2.16   6.23
+ 1   8.22   7.95   6.72
+ 1  13.70  11.22   4.91
+ 1   8.21   9.85   8.17
+ 1  15.86  11.42  13.06
+ 1   9.18   9.18   9.49
+ 1  12.49   4.67  11.94
+ 1  17.32   6.86   4.44
+ 2   8.50  12.26   9.11
+ 2   7.42   5.13  17.15
+ 2  10.28   3.32  11.23
+ 2  10.16  14.72   5.99
+ 2  12.79   4.17  29.28
+ 2   9.60  12.72  11.00
+ 2   6.47   8.89  19.00
+ 2  11.35   9.95  14.53
+ 2   9.15   2.94  13.68
+ 2   9.70   5.06  20.84
+ 2   9.77  17.86  35.18
+ 2  11.61  11.75  17.00
+ 2   9.09  13.25  20.66
+ 2   8.53  10.14  17.45
+ 2   8.29   6.22  16.38
+ 2  15.90  12.90  19.09
+ 2  11.94   5.69  14.77
+ 2   9.54  16.77  22.66
+ 2  10.43  17.65  10.66
+ 2  10.87  21.52  28.47
+ 2   7.13  13.22  19.44
+ 2  11.88  12.18  21.20
+ 2  12.03   9.22  23.09
+
+T06_11    45    2 format
+) Data from Table 6.11 p. 341 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-11.DAT on disk from book
+) Male hook-billed kite data
+)"%lf %lf"
+(2f4.0)
+ 180 278
+ 186 277
+ 206 308
+ 184 290
+ 177 273
+ 177 284
+ 176 267
+ 200 281
+ 191 287
+ 193 271
+ 212 302
+ 181 254
+ 195 297
+ 187 281
+ 190 284
+ 185 282
+ 195 285
+ 183 276
+ 202 308
+ 177 254
+ 177 268
+ 170 260
+ 186 274
+ 177 272
+ 178 266
+ 192 281
+ 204 276
+ 191 290
+ 178 265
+ 177 275
+ 284 277
+ 176 281
+ 185 287
+ 191 295
+ 177 267
+ 197 310
+ 199 299
+ 190 273
+ 180 278
+ 189 280
+ 194 290
+ 186 287
+ 191 286
+ 187 288
+ 186 275
+
+T06_11A   90     3 format
+) Data from Tables 5.12 (p. 268) and 6.11 (p. 341) in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from files T5-12.DAT and T6-11.DAT on disk
+) from book
+) Female and male hook-billed kite data
+) Col. 1: gender (1 = female, 2 = male)
+) Col. 2: x1 = tail length
+) Col. 3: x2 = wing length
+)"%f %f %f"
+(f2.0,2f5.0)
+ 1  191  284
+ 1  197  285
+ 1  208  288
+ 1  180  273
+ 1  180  275
+ 1  188  280
+ 1  210  283
+ 1  196  288
+ 1  191  271
+ 1  179  257
+ 1  208  289
+ 1  202  285
+ 1  200  272
+ 1  192  282
+ 1  199  280
+ 1  186  266
+ 1  197  285
+ 1  201  295
+ 1  190  282
+ 1  209  305
+ 1  187  285
+ 1  207  297
+ 1  178  268
+ 1  202  271
+ 1  205  285
+ 1  190  280
+ 1  189  277
+ 1  211  310
+ 1  216  305
+ 1  189  274
+ 1  173  271
+ 1  194  280
+ 1  198  300
+ 1  180  272
+ 1  190  292
+ 1  191  286
+ 1  196  285
+ 1  207  286
+ 1  209  303
+ 1  179  261
+ 1  186  262
+ 1  174  245
+ 1  181  250
+ 1  189  262
+ 1  188  258
+ 2  180  278
+ 2  186  277
+ 2  206  308
+ 2  184  290
+ 2  177  273
+ 2  177  284
+ 2  176  267
+ 2  200  281
+ 2  191  287
+ 2  193  271
+ 2  212  302
+ 2  181  254
+ 2  195  297
+ 2  187  281
+ 2  190  284
+ 2  185  282
+ 2  195  285
+ 2  183  276
+ 2  202  308
+ 2  177  254
+ 2  177  268
+ 2  170  260
+ 2  186  274
+ 2  177  272
+ 2  178  266
+ 2  192  281
+ 2  204  276
+ 2  191  290
+ 2  178  265
+ 2  177  275
+ 2  284  277
+ 2  176  281
+ 2  185  287
+ 2  191  295
+ 2  177  267
+ 2  197  310
+ 2  199  299
+ 2  190  273
+ 2  180  278
+ 2  189  280
+ 2  194  290
+ 2  186  287
+ 2  191  286
+ 2  187  288
+ 2  186  275
+
+T06_12    50    5 format
+) Data from Table 6.12, p. 343 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-12.DAT on disk from book
+) The gender column containing "male" or "female" was deleted and
+) a new column with gender coded as 1 (male) or 2 (female) inserted
+) at start
+) Oxygen consumption data
+) Edition 4 Table 6.10
+) Col. 1: Gender (1 = male, 2 = female)
+) Col. 2: x1 = Resting O2 (L/min)
+) Col. 3: x2 = Resting O2 (mL/kg/min)
+) Col. 4: x3 = Maximum O2 (L/min)
+) Col. 5: x4 = Maximum O2 (mL/kg/min)
+)"%lf %lf %lf %lf"
+(f2.0,3f6.2mf7.2)
+ 1  0.34  3.71  2.87  30.87
+ 1  0.39  5.08  3.38  43.85
+ 1  0.48  5.13  4.13  44.51
+ 1  0.31  3.95  3.60  46.00
+ 1  0.36  5.51  3.11  47.02
+ 1  0.33  4.07  3.95  48.50
+ 1  0.43  4.77  4.39  48.75
+ 1  0.48  6.69  3.50  48.86
+ 1  0.21  3.71  2.82  48.92
+ 1  0.32  4.35  3.59  48.38
+ 1  0.54  7.89  3.47  50.56
+ 1  0.32  5.37  3.07  51.15
+ 1  0.40  4.95  4.43  55.34
+ 1  0.31  4.97  3.56  56.67
+ 1  0.44  6.68  3.86  58.49
+ 1  0.32  4.80  3.31  49.99
+ 1  0.50  6.43  3.29  42.25
+ 1  0.36  5.99  3.10  51.70
+ 1  0.48  6.30  4.80  63.30
+ 1  0.40  6.00  3.06  46.23
+ 1  0.42  6.04  3.85  55.08
+ 1  0.55  6.45  5.00  58.80
+ 1  0.50  5.55  5.23  57.46
+ 1  0.34  4.27  4.00  50.35
+ 1  0.40  4.58  2.82  32.48
+ 2  0.29  5.04  1.93  33.85
+ 2  0.28  3.95  2.51  35.82
+ 2  0.31  4.88  2.31  36.40
+ 2  0.30  5.97  1.90  37.87
+ 2  0.28  4.57  2.32  38.30
+ 2  0.11  1.74  2.49  39.19
+ 2  0.25  4.66  2.12  39.21
+ 2  0.26  5.28  1.98  39.94
+ 2  0.39  7.32  2.25  42.41
+ 2  0.37  6.22  1.71  28.97
+ 2  0.31  4.20  2.76  37.80
+ 2  0.35  5.10  2.10  31.10
+ 2  0.29  4.46  2.50  38.30
+ 2  0.33  5.60  3.06  51.80
+ 2  0.18  2.80  2.40  37.60
+ 2  0.28  4.01  2.58  36.78
+ 2  0.44  6.69  3.05  46.16
+ 2  0.22  4.55  1.85  38.95
+ 2  0.34  5.73  2.43  40.60
+ 2  0.30  5.12  2.58  43.69
+ 2  0.31  4.77  1.97  30.40
+ 2  0.27  5.16  2.03  39.46
+ 2  0.66 11.05  2.32  39.34
+ 2  0.37  5.23  2.48  34.86
+ 2  0.35  5.37  2.25  35.07
+
+T06_13    90     5 format
+) Data from Table 6.13 p. 344 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-13.DAT on disk from book
+) Egyptian skull data
+) Rearranged, moving time period to column 1 from 5
+) Col. 1: period = time period (1, 2 or 3)
+) Col. 2: x1 = MaxBreath
+) Col. 3: x2 = BasHeight
+) Col. 4: x3 = BasLength
+) Col. 5: x4 = NasHeight
+)"%lf %lf %lf %lf %lf"
+(f2.0,4f5.0)
+ 1  131  138   89   49
+ 1  125  131   92   48
+ 1  131  132   99   50
+ 1  119  132   96   44
+ 1  136  143  100   54
+ 1  138  137   89   56
+ 1  139  130  108   48
+ 1  125  136   93   48
+ 1  131  134  102   51
+ 1  134  134   99   51
+ 1  129  138   95   50
+ 1  134  121   95   53
+ 1  126  129  109   51
+ 1  132  136  100   50
+ 1  141  140  100   51
+ 1  131  134   97   54
+ 1  135  137  103   50
+ 1  132  133   93   53
+ 1  139  136   96   50
+ 1  132  131  101   49
+ 1  126  133  102   51
+ 1  135  135  103   47
+ 1  134  124   93   53
+ 1  128  134  103   50
+ 1  130  130  104   49
+ 1  138  135  100   55
+ 1  128  132   93   53
+ 1  127  129  106   48
+ 1  131  136  114   54
+ 1  124  138  101   46
+ 2  124  138  101   48
+ 2  133  134   97   48
+ 2  138  134   98   45
+ 2  148  129  104   51
+ 2  126  124   95   45
+ 2  135  136   98   52
+ 2  132  145  100   54
+ 2  133  130  102   48
+ 2  131  134   96   50
+ 2  133  125   94   46
+ 2  133  136  103   53
+ 2  131  139   98   51
+ 2  131  136   99   56
+ 2  138  134   98   49
+ 2  130  136  104   53
+ 2  131  128   98   45
+ 2  138  129  107   53
+ 2  123  131  101   51
+ 2  130  129  105   47
+ 2  134  130   93   54
+ 2  137  136  106   49
+ 2  126  131  100   48
+ 2  135  136   97   52
+ 2  129  126   91   50
+ 2  134  139  101   49
+ 2  131  134   90   53
+ 2  132  130  104   50
+ 2  130  132   93   52
+ 2  135  132   98   54
+ 2  130  128  101   51
+ 3  137  141   96   52
+ 3  129  133   93   47
+ 3  132  138   87   48
+ 3  130  134  106   50
+ 3  134  134   96   45
+ 3  140  133   98   50
+ 3  138  138   95   47
+ 3  136  145   99   55
+ 3  136  131   92   46
+ 3  126  136   95   56
+ 3  137  129  100   53
+ 3  137  139   97   50
+ 3  136  126  101   50
+ 3  137  133   90   49
+ 3  129  142  104   47
+ 3  135  138  102   55
+ 3  129  135   92   50
+ 3  134  125   90   60
+ 3  138  134   96   51
+ 3  136  135   94   53
+ 3  132  130   91   52
+ 3  133  131  100   50
+ 3  138  137   94   51
+ 3  130  127   99   45
+ 3  136  133   91   49
+ 3  134  123   95   52
+ 3  136  137  101   54
+ 3  133  131   96   49
+ 3  138  133  100   55
+ 3  138  133   91   46
+
+T06_14    30    8 format
+) Data from Table 6.14 p. 346 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-14.DAT on disk from book
+) Spouse data
+) Data on disk consisted of 60 rows and 4 columns.  This data set is
+) first 30 rows (husband rating wife) side by side with last 30 rows
+) (wife rating husband)
+) Edition 4 Table 6.11
+) Col. 1: x1 for husband rating wife
+) Col. 2: x2 for husband rating wife
+) Col. 3: x3 for husband rating wife
+) Col. 4: x4 for husband rating wife
+) Col. 5: x1 for wife rating husband
+) Col. 6: x2 for wife rating husband
+) Col. 7: x3 for wife rating husband
+) Col. 8: x4 for wife rating husband
+)"%lf %lf %lf %lf %lf %lf %lf %lf"
+(8f2.0)
+ 2 3 5 5 4 4 5 5
+ 5 5 4 4 4 5 5 5
+ 4 5 5 5 4 4 5 5
+ 4 3 4 4 4 5 5 5
+ 3 3 5 5 4 4 5 5
+ 3 3 4 5 3 3 4 4
+ 3 4 4 4 4 3 5 4
+ 4 4 5 5 3 4 5 5
+ 4 5 5 5 4 4 5 4
+ 4 4 3 3 3 4 4 4
+ 4 4 5 5 4 5 5 5
+ 5 5 4 4 5 5 5 5
+ 4 4 4 4 4 4 5 5
+ 4 3 5 5 4 4 4 4
+ 4 4 5 5 4 4 5 5
+ 3 3 4 5 3 4 4 4
+ 4 5 4 4 5 5 5 5
+ 5 5 5 5 4 5 4 4
+ 5 5 4 4 3 4 4 4
+ 4 4 4 4 5 3 4 4
+ 4 4 4 4 5 3 4 4
+ 4 4 4 4 4 5 4 4
+ 3 4 5 5 2 5 5 5
+ 5 3 5 5 3 4 5 5
+ 5 5 3 3 4 3 5 5
+ 3 3 4 4 4 4 4 4
+ 4 4 4 4 4 4 5 5
+ 3 3 5 5 3 4 4 4
+ 4 4 3 3 4 4 5 4
+ 4 4 5 5 4 4 5 5
+
+T06_15    70    8 format
+) Data from Table 6.15 p. 348 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-15.DAT on disk from book
+) Fly species indicator moved to column 1
+) Biting fly data
+) Col. 1: Fly species (0 = L. torrens, 1 = L. carteri)
+) Col. 2: x1 = wing length
+) Col. 3: x2 = wing width
+) Col. 4: x3 = third palp length
+) Col. 5: x4 = third palp width
+) Col. 6: x5 = fourth palp length
+) Col. 7: x6 = length of antennal segment 12
+) Col. 8: x7 = length of antennal segment 13
+)"%lf %lf %lf %lf %lf %lf %lf %lf"
+(f5.0,6f3.0,f2.0)
+ 0  85  41  31  13  25   9   8
+ 0  87  38  32  14  22  13  13
+ 0  94  44  36  15  27   8   9
+ 0  92  43  32  17  28   9   9
+ 0  96  43  35  14  26  10  10
+ 0  91  44  36  12  24   9   9
+ 0  90  42  36  16  26   9   9
+ 0  92  43  36  17  26   9   9
+ 0  91  41  36  14  23   9   9
+ 0  87  38  35  11  24   9  10
+ 0  97  45  39  17  27   9  10
+ 0  89  38  36  13  22   9   9
+ 0  94  45  37  13  26   9   9
+ 0  96  44  37  14  24   9  10
+ 0 104  49  35  14  21  10  10
+ 0  94  41  31  17  26  10   9
+ 0  99  44  31  18  28  10   9
+ 0  94  38  32  13  22   9   9
+ 0  94  43  37  16  26   9  10
+ 0  93  43  38  14  28  10  10
+ 0  95  44  37  18  27  10  10
+ 0  95  45  39  13  27  10  10
+ 0  96  39  37  12  26   8   8
+ 0 103  46  34  18  26  10  10
+ 0 108  44  37  14  25  11  11
+ 0 106  47  38  15  26  10  10
+ 0 105  46  34  14  31  10  11
+ 0 103  44  34  15  23  10  10
+ 0 100  41  35  14  24  10  10
+ 0 109  44  36  13  27  11  10
+ 0 104  45  36  15  30  10  10
+ 0  95  40  35  14  23   9  10
+ 0 104  44  34  15  29   9  10
+ 0  90  40  37  12  22   9  10
+ 0 104  46  37  14  30  10  10
+ 1  86  19  37  11  25   9   9
+ 1  94  40  38  14  31   6   7
+ 1 103  48  39  14  33  10  10
+ 1  82  41  35  12  25   9   8
+ 1 103  43  42  15  32   9   9
+ 1 101  43  40  15  25   9   9
+ 1 103  45  44  14  29  11  11
+ 1 100  43  40  18  31  11  10
+ 1  99  41  42  15  31  10  10
+ 1 100  44  43  16  34  10  10
+ 1 112  47  44  16  38  12  11
+ 1  99  48  37  14  32  10   9
+ 1  98  45  41  19  31   9   8
+ 1 101  46  42  14  24  11  10
+ 1  99  45  37  13  28  10   9
+ 1 103  47  44  15  20   8   9
+ 1  98  40  38  12  32   9   8
+ 1 101  46  36  14  28  10  10
+ 1 101  46  40  17  32   9   9
+ 1  98  47  39  15  33  10  10
+ 1  99  45  42  15  32  10   9
+ 1 102  45  44  15  30  10  10
+ 1  97  45  37  15  32  10   9
+ 1  96  39  40  14  20   9   9
+ 1  89  39  33  12  20   9   8
+ 1  99  42  38  14  33   9   9
+ 1 110  45  41  17  36   9  10
+ 1  99  44  35  16  31  10  10
+ 1 103  43  38  14  32  10  10
+ 1  95  46  36  15  31   8   8
+ 1 101  47  38  14  37  11  11
+ 1 103  47  40  15  32  11  11
+ 1  99  43  37  14  23  11  10
+ 1 105  50  40  16  33  12  11
+ 1  99  47  39  14  34   7   7
+
+T06_16    24    6 format
+) Data from Table 6.16 p. 349 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-16.DAT on disk from book
+) See also data set T01_08
+) Mineral content in bones (after 1 year)
+) Mineral content of 6 bones of older women
+) Edition 4 Table 6.13
+) Col. 1: Dominant radius
+) Col. 2: Non-dominant radius
+) Col. 3: Dominant humerus
+) Col. 4: Non-dominant humerus
+) Col. 5: Dominant ulna
+) Col. 6: Non-dominant ulna
+)"%lf %lf %lf %lf %lf %lf"
+(6f6.3)
+ 1.027 1.051 2.268 2.246 0.869 0.964
+ 0.857 0.817 1.718 1.710 0.602 0.689
+ 0.875 0.880 1.953 1.756 0.765 0.738
+ 0.873 0.698 1.668 1.443 0.761 0.698
+ 0.811 0.813 1.643 1.661 0.551 0.619
+ 0.640 0.734 1.396 1.378 0.753 0.515
+ 0.947 0.865 1.851 1.686 0.708 0.787
+ 0.886 0.806 1.742 1.815 0.687 0.715
+ 0.991 0.923 1.931 1.776 0.844 0.656
+ 0.977 0.925 1.933 2.106 0.869 0.789
+ 0.825 0.826 1.609 1.651 0.654 0.726
+ 0.851 0.765 2.352 1.980 0.692 0.526
+ 0.770 0.730 1.470 1.420 0.670 0.580
+ 0.912 0.875 1.846 1.809 0.823 0.773
+ 0.905 0.826 1.842 1.579 0.746 0.729
+ 0.756 0.727 1.747 1.860 0.656 0.506
+ 0.765 0.764 1.923 1.941 0.693 0.740
+ 0.932 0.914 2.190 1.997 0.883 0.785
+ 0.843 0.782 1.242 1.228 0.577 0.627
+ 0.879 0.906 2.164 1.999 0.802 0.769
+ 0.673 0.537 1.573 1.330 0.540 0.498
+ 0.949 0.900 2.130 2.159 0.804 0.779
+ 0.463 0.637 1.041 1.265 0.570 0.634
+ 0.776 0.743 1.442 1.411 0.585 0.640
+
+T06_17   12    5 format
+) Data from Table 6.17 p. 349 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-17.DAT on disk from book
+) Peanut data
+) Edition 4 Table 6.14
+) Col. 1: Factor 1 = location (1 or 2)
+) Col. 2: Factor 2 = variety (5, 6 or 8)
+) Col. 3: x1 = yield (plot weight)
+) Col. 4: x2 = SdMatKer = sound mature kernels
+) Col. 5: x3 = seed size (wt in g of 100 seeds)
+)"%lf %lf %lf %lf %lf"
+(2f2.0,2f6.1,f5.1)
+ 1 5 195.3 153.1 51.4
+ 1 5 194.3 167.7 53.7
+ 2 5 189.7 139.5 55.5
+ 2 5 180.4 121.1 44.4
+ 1 6 203.0 156.8 49.8
+ 1 6 195.9 166.0 45.8
+ 2 6 202.7 166.1 60.4
+ 2 6 197.6 161.8 54.1
+ 1 8 193.5 164.5 57.8
+ 1 8 187.0 165.1 58.6
+ 2 8 201.5 166.8 65.0
+ 2 8 200.0 173.8 67.2
+
+T06_18     36     5 format
+) Data from Table 6.18 p. 351 in 
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T6-18.DAT on disk from book
+) Spectral reflectance data
+) Data rearranged, with species, time and replication in columns
+) 1, 2 and 3 and species coded numerically
+) Col. 1: species (1 = SS, 2 = JL, 3 = LP)
+) Col. 2: time (1 - 3)
+) Col. 3: replication (1-4)
+) Col. 4: x1 = percent spectral reflectance at 560 nm (green)
+) Col. 5: x2 = percent spectral reflectance at wavelength 720 nm
+)         (near infrared)
+)"%lf %lf %lf %lf %lf"
+(f3.0,2f4.0,2f7.2)
+  1   1   1   9.33  19.14
+  1   1   2   8.74  19.55
+  1   1   3   9.31  19.24
+  1   1   4   8.27  16.37
+  1   2   1  10.22  25.00
+  1   2   2  10.13  25.32
+  1   2   3  10.42  27.12
+  1   2   4  10.62  26.28
+  1   3   1  15.25  38.89
+  1   3   2  16.22  36.67
+  1   3   3  17.24  40.74
+  1   3   4  12.77  67.50
+  2   1   1  12.07  33.03
+  2   1   2  11.03  32.37
+  2   1   3  12.48  31.31
+  2   1   4  12.12  33.33
+  2   2   1  15.38  40.00
+  2   2   2  14.21  40.48
+  2   2   3   9.69  33.90
+  2   2   4  14.35  40.15
+  2   3   1  38.71  77.14
+  2   3   2  44.74  78.57
+  2   3   3  36.67  71.43
+  2   3   4  37.21  45.00
+  3   1   1   8.73  23.27
+  3   1   2   7.94  20.87
+  3   1   3   8.37  22.16
+  3   1   4   7.86  21.78
+  3   2   1   8.45  26.32
+  3   2   2   6.79  22.73
+  3   2   3   8.34  26.67
+  3   2   4   7.54  24.87
+  3   3   1  14.04  44.44
+  3   3   2  13.51  37.93
+  3   3   3  13.33  37.93
+  3   3   4  12.77  60.87
+
+E07_10    7    4 format
+) Data from Examples 7.6 (p. 376) and 7.10 (p. 397) in Chapter 7 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file E7-10.DAT on disk from book
+) Columns 1 - 3 are from Table 7.3; column 4 is from example 7.10
+) Computer data
+) Col. 1: z1 = orders
+) Col. 2: z2 = add-delete items
+) Col. 3: Y1 = CPU time
+) Col. 4: Y2 = disk input/output capacity
+)"%lf %lf %lf %lf"
+(f6.1,f6.3,2f6.1)
+ 123.5 2.108 141.5 301.8
+ 146.1 9.213 168.9 396.1
+ 133.9 1.905 154.8 328.2
+ 128.5 0.815 146.5 307.4
+ 151.5 1.061 172.8 362.4
+ 136.2 8.603 160.1 369.5
+  92.0 1.125 108.5 229.1
+
+T07_01    20    3 format
+) Data from Table 7.1 p. 368 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T7-1.DAT on disk from book
+) Real-estate data
+) Col. 1: z1 = total dwelling size (100 ft^2)
+) Col. 2: z2 = assessed value ($1000)
+) Col. 3: Y = selling price ($1000)
+)"%lf %lf %lf"
+(f6.2,f5.1,f7.0)
+ 15.31 57.3  74.8
+ 15.20 63.8  74.0
+ 16.25 65.4  72.9
+ 14.33 57.0  70.0
+ 14.57 63.8  74.9
+ 17.33 63.2  76.0
+ 14.48 60.2  72.0
+ 14.91 57.7  73.5
+ 15.25 56.4  74.5
+ 13.89 55.6  73.5
+ 15.18 62.6  71.5
+ 14.44 63.4  71.0
+ 14.87 60.2  78.9
+ 18.63 67.2  86.5
+ 15.20 57.1  68.0
+ 25.76 89.6 102.0
+ 19.05 68.6  84.0
+ 15.37 60.1  69.0
+ 18.06 66.3  88.0
+ 16.35 65.8  76.0
+
+T07_02    18    3 format
+) Data from Table 7.2 p. 372 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T7-2.DAT on disk from book
+) Restaurant-service data
+) Col. 1: location (1, 2 or 3)
+) Col. 2: gender (0 = male, 1 = female)
+) Col. 3: Y = service index
+)"%lf %lf %lf"
+(2f2.0,f5.1)
+ 1 0 15.2
+ 1 0 21.2
+ 1 0 27.3
+ 1 0 21.2
+ 1 0 21.2
+ 1 1 36.4
+ 1 1 92.4
+ 2 0 27.3
+ 2 0 15.2
+ 2 0  9.1
+ 2 0 18.2
+ 2 0 50.0
+ 2 1 44.0
+ 2 1 63.6
+ 3 0 15.2
+ 3 0 30.3
+ 3 1 36.4
+ 3 1 40.9
+
+T07_03    7    3 format
+) Data from Table 7.3 p. 376 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T7-3.DAT on disk from book
+) These data are the same as the first 3 columns of E07_10
+) Computer data
+) Col. 1: z1 = orders
+) Col. 2: z2 = add-delete items
+) Col. 3: Y = CPU time
+)"%lf %lf %lf"
+(f6.1,f6.3,f6.1)
+ 123.5 2.108 141.5
+ 146.1 9.213 168.9
+ 133.9 1.905 154.8
+ 128.5 0.815 146.5
+ 151.5 1.061 172.8
+ 136.2 8.603 160.1
+  92.0 1.125 108.5
+
+T07_04    63    5 format
+) Data from Table 7.4 p. 411 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T7-4.DAT on disk from book
+) Natural gas data
+) Col. 1: Y = sendout
+) Col. 2: Z1 = DHD
+) Col. 3: Z2 = DHD lagged by 1
+) Col. 4: Z3 = windspeed
+) Col. 5: Z4 = weekend (0 = weekday, 1 = weekend)
+)"%lf %lf %lf %lf %lf"
+(f4.0,3f3.0,f2.0)
+ 227 32 30 12 1
+ 236 31 32  8 1
+ 228 30 31  8 0
+ 252 34 30  8 0
+ 238 28 34 12 0
+ 195 24 28  8 0
+ 261 39 24 16 0
+ 406 62 39 16 1
+ 428 62 62 16 1
+ 366 49 62 16 0
+ 426 62 49 16 0
+ 402 53 62  8 0
+ 301 38 53 12 0
+ 247 30 38  8 0
+ 310 46 30 16 1
+ 401 59 46 14 1
+ 363 50 59 16 0
+ 343 46 50  2 0
+ 448 60 46 12 0
+ 450 57 60 14 0
+ 352 45 57  8 0
+ 317 46 45  8 1
+ 376 47 46 12 1
+ 348 38 47 16 0
+ 298 37 38  8 0
+ 342 45 37  8 0
+ 328 37 45 20 0
+ 289 39 37 16 0
+ 259 38 39 12 1
+ 288 35 38 16 1
+ 263 32 35  8 0
+ 258 31 32 14 0
+ 299 37 31 16 0
+ 330 42 37 12 0
+ 290 35 42 20 0
+ 225 30 35 16 1
+ 378 50 30 18 1
+ 447 59 50 12 0
+ 386 42 59 22 0
+ 416 54 42 16 0
+ 469 61 54 12 0
+ 439 58 61 14 0
+ 378 48 58 18 1
+ 349 42 48 18 1
+ 363 45 42 12 0
+ 431 56 45 12 0
+ 424 52 56 16 0
+ 384 47 52  8 0
+ 252 33 47  8 0
+ 194 25 33 16 1
+ 184 23 25 16 1
+ 192 25 23 12 0
+ 213 30 25 12 0
+ 233 31 30  8 0
+ 212 30 31 12 0
+ 192 26 30 16 0
+ 213 32 26 12 1
+ 296 41 32 16 1
+ 333 46 41  8 0
+ 266 33 46  8 0
+ 280 38 33 18 0
+ 386 52 38 22 0
+ 415 57 52 18 0
+
+T07_05    20    6 format
+) Data from Table 7.5 p. 422in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T7-5.DAT on disk from book
+) Battery failure data
+) Col. 1: z1 = charge rate (amps)
+) Col. 2: z2 = discharge rate (amps)
+) Col. 3: z3 = depth of discharge (% rated amper-hours)
+) Col. 4: z4 = temperature (degrees C)
+) Col. 5: z5 = end of charge voltage (volts)
+) Col. 6: y  = cycles to failure
+)"%lf %lf %lf %lf %lf %lf"
+(f6.3,f5.2,f6.1,f3.0,f5.2,f4.0)
+ 0.375 3.13  60.0 40 2.00 101
+ 1.000 3.13  76.8 30 1.99 141
+ 1.000 3.13  60.0 20 2.00  96
+ 1.000 3.13  60.0 20 1.98 125
+ 1.625 3.13  43.2 10 2.01  43
+ 1.625 3.13  60.0 20 2.00  16
+ 1.625 3.13  60.0 20 2.02 188
+ 0.375 5.00  76.8 10 2.01  10
+ 1.000 5.00  43.2 10 1.99   3
+ 1.000 5.00  43.2 30 2.01 386
+ 1.000 5.00 100.0 20 2.00  45
+ 1.625 5.00  76.8 10 1.99   2
+ 0.375 1.25  76.8 10 2.01  76
+ 1.000 1.25  43.2 10 1.99  78
+ 1.000 1.25  76.8 30 2.00 160
+ 1.000 1.25  60.0  0 2.00   3
+ 1.625 1.25  43.2 30 1.99 216
+ 1.625 1.25  60.0 20 2.00  73
+ 0.375 3.13  76.8 30 1.99 314
+ 0.375 3.13  60.0 20 2.00 170
+
+T07_06    17    7 format
+) Data from Table 7.6 p. 423 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T7-6.DAT on disk from book
+) Amitriptyline data
+) Col. 1: y1 = TOT = total TCAD plasma level
+) Col. 2: y2 = AMI = amount of amitriptyline present in TCAD plasma
+)                    level
+) Col. 3: z1 = GEN = gender (1 = F, 0 = M)
+) Col. 4: z2 = AMT = amount of antidepressants taken at time of
+)                    overdose
+) Col. 5: z3 = PR = PR wave meaasurement
+) Col. 6: z4 = DIAP = diastolic blood pressure
+) Col. 7: z5 = QRS = QRS wave measurement
+)"%lf %lf %lf %lf %lf %lf %lf"
+(2f5.0,f2.0,f5.0,f4.0,f3.0,f4.0)
+ 3389 3149 1 7500 220  0 140
+ 1101  653 1 1975 200  0 100
+ 1131  810 0 3600 205 60 111
+  596  448 1  675 160 60 120
+  896  844 1  750 185 70  83
+ 1767 1450 1 2500 180 60  80
+  807  493 1  350 154 80  98
+ 1111  941 0 1500 200 70  93
+  645  547 1  375 137 60 105
+  628  392 1 1050 167 60  74
+ 1360 1283 1 3000 180 60  80
+  652  458 1  450 160 64  60
+  860  722 1 1750 135 90  79
+  500  384 0 2000 160 60  80
+  781  501 0 4500 180  0 100
+ 1070  405 0 1500 170 90 120
+ 1754 1520 1 3000 180  0 129
+
+P08_23     2  STRUC
+) Data from Problem 23 in Chapter 8 p. 474-475 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P08-23.DAT on disk from book
+)
+) The data set is a structure with two components, 'mean' and 'covar'
+) containing, respectively, the sample mean and sample covariance
+) matrix of 6 measurements on 61 Alaskan bears.
+) Data set is same as P05_09
+
+P08_23$mean     6 columns
+) Sample means
+)"%lf %lf %lf %lf %lf %lf"
+   95.52  164.38   55.69   93.39   17.98   31.13
+
+P08_23$covar     6     6
+) Sample covariance matrix
+)"%lf %lf %lf %lf %lf %lf"
+ 3266.46 1343.97  731.54 1175.50  162.68  238.37
+ 1343.97  721.91  324.25  537.35   80.17  117.73
+  731.54  324.25  179.28  281.17   39.15   56.80
+ 1175.50  537.35  281.17  474.98   63.73   94.85
+  162.68   80.17   39.15   63.73    9.95   13.88
+  238.37  117.73   56.80   94.85   13.88   21.26
+
+E08_04    24    3 format
+) Data from Example 4 in Chapter 8 p. 441 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file E8-4.DAT on disk from book
+) They are the same as the male data in Table 6.9, p. 339
+) (data set T06_09)
+) Col. 1: x1 = length
+) Col. 2: x2 = width
+) Col. 3: x3 = height
+)"%lf %lf %lf"
+(2f4.0,f3.0)
+  93  74 37
+  94  78 35
+  96  80 35
+ 101  84 39
+ 102  85 38
+ 103  81 37
+ 104  83 39
+ 106  83 39
+ 107  82 38
+ 112  89 40
+ 113  88 40
+ 114  86 40
+ 116  90 43
+ 117  90 41
+ 117  91 41
+ 119  93 41
+ 120  89 40
+ 120  93 44
+ 121  95 42
+ 125  93 45
+ 127  96 45
+ 128  95 45
+ 131  95 46
+ 135 106 47
+
+T08_02    16    5 format
+) Data from Table 8.2 p. 456 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T8-2.DAT on disk from book
+) Value of the principal components for the police dept. data
+) Col. 1: yhat_1 = principal component 1
+) Col. 2: yhat_2 = principal component 2
+) Col. 3: yhat_3 = principal component 3
+) Col. 4: yhat_4 = principal component 4
+) Col. 5: yhat_5 = principal component 5
+)"%lf %lf %lf %lf %lf"
+(4f8.1,f7.1)
+  2044.9   588.2   425.8  -189.1 -209.8
+ -2143.7  -686.2   883.6  -565.9 -441.5
+  -177.8  -464.6   707.5   736.3   38.2
+ -2186.2   450.5  -184.0   443.7 -325.3
+  -878.6  -545.8   115.7   296.4  437.5
+   563.2 -1045.4   281.2   620.5  142.7
+   403.1    66.8   340.6  -135.5  521.2
+ -1988.9  -801.8 -1437.3  -148.8   61.6
+   132.8   563.7   125.3    68.2  611.5
+ -2787.3  -213.4     7.8   169.4 -202.3
+   283.4  3936.9    -0.9   276.2 -159.6
+   761.6   256.0 -2153.6  -418.8   28.2
+  -498.3   244.7   966.5 -1142.3  182.6
+  2366.2 -1193.7  -165.5   270.6 -344.9
+  1917.8  -782.0   -82.9  -196.8  -89.9
+  2187.7  -373.9   170.1   -84.1 -250.2
+
+T08_04    100    5 format
+) Data from Table 8.4 p. 469 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from erroneously named file T8-3.DAT on disk
+) from book
+) Stock-price data (weekly rate of return)
+) Col. 1: Allied Chemical
+) Col. 2: Du Pont
+) Col. 3: Union Carbide
+) Col. 4: Exxon
+) Col. 5: Texaco
+)"%lf %lf %lf %lf %lf"
+(5f10.6)
+  0.000000  0.000000  0.000000  0.039473 -0.000000
+  0.027027 -0.044855 -0.003030 -0.014466  0.043478
+  0.122807  0.060773  0.088146  0.086238  0.078124
+  0.057031  0.029948  0.066808  0.013513  0.019512
+  0.063670 -0.003793 -0.039788 -0.018644 -0.024154
+  0.003521  0.050761  0.082873  0.074265  0.049504
+ -0.045614 -0.033007  0.002551 -0.009646 -0.028301
+  0.058823  0.041719  0.081425 -0.014610  0.014563
+  0.000000 -0.019417  0.002353  0.001647 -0.028708
+  0.006944 -0.025990  0.007042 -0.041118 -0.024630
+  0.010345  0.006353  0.083916  0.010291 -0.000000
+ -0.030717  0.020202 -0.040860 -0.039049 -0.050505
+ -0.003521  0.118812  0.089686  0.060070  0.021276
+  0.060071  0.079646  0.028807  0.036666  0.026041
+ -0.003333 -0.001025  0.028000  0.028938 -0.010152
+  0.055596  0.091282  0.042759  0.059375 -0.015812
+  0.051282 -0.007519 -0.041431 -0.016269  0.058510
+ -0.060976 -0.043561  0.023576  0.004566 -0.015075
+ -0.035714  0.018170 -0.021113 -0.007575 -0.010204
+  0.000000 -0.021569 -0.007843  0.088549  0.082474
+ -0.006734 -0.015030 -0.086956 -0.021037 -0.019047
+  0.000000 -0.017294  0.017316  0.054441  0.033980
+  0.030508  0.047619  0.055319 -0.008152  0.032863
+  0.023026  0.012846 -0.002016  0.013698 -0.031518
+ -0.061093 -0.043902 -0.042424 -0.029729 -0.014084
+  0.041096  0.016326  0.048523  0.018105  0.071428
+ -0.013158 -0.004016 -0.038229 -0.042407 -0.048888
+  0.003333 -0.008065 -0.014992  0.000000 -0.028037
+ -0.056478 -0.014228 -0.038627 -0.005714 -0.019607
+  0.051899  0.018557  0.066964  0.020302 -0.015000
+ -0.013559 -0.029352  0.012552 -0.008571 -0.010152
+ -0.037801  0.003252 -0.012397 -0.020172 -0.025641
+ -0.021429  0.031466  0.039749  0.016176  0.005263
+ -0.014599 -0.024390 -0.010060  0.004341 -0.005235
+ -0.014815 -0.020833 -0.091463 -0.007204 -0.015789
+  0.011278 -0.017021  0.064877  0.065312  0.026737
+ -0.096654 -0.075758 -0.073529 -0.053133 -0.026041
+  0.020576  0.058548  0.018141  0.063309  0.016042
+  0.088710  0.046460  0.022272  0.004059 -0.000000
+  0.007407  0.019027  0.045752 -0.008086  0.052631
+ -0.022059  0.002075 -0.017272 -0.021739 -0.045000
+ -0.031579  0.010352  0.012848 -0.013888  0.010695
+  0.039370  0.054303 -0.014799  0.011428 -0.005291
+  0.015151  0.029154 -0.021459 -0.009887 -0.021276
+  0.000000 -0.010466  0.035088 -0.014265  0.038043
+ -0.037313 -0.024038 -0.019068 -0.024602 -0.010471
+  0.015504 -0.027586  0.006479  0.022255 -0.026455
+  0.034351  0.024316  0.034335  0.020319  0.005434
+ -0.036900  0.011869  0.014523  0.007112  0.016216
+  0.068965  0.014663  0.016360  0.038135  0.063829
+  0.089606  0.079961  0.102616  0.002721  0.020000
+  0.000000  0.016949  0.029197  0.002713  0.004901
+  0.059210  0.077193  0.019504 -0.012178  0.039024
+  0.027950  0.009772  0.000000 -0.000000 -0.000265
+ -0.004196  0.014516 -0.031696 -0.004445 -0.014354
+  0.018405 -0.046900  0.061594 -0.043235 -0.029126
+  0.069277  0.056888  0.040956  0.040816  0.020000
+ -0.016901 -0.018268 -0.008197 -0.005602 -0.019607
+ -0.017192 -0.001618 -0.001653 -0.016901  0.005000
+ -0.040816 -0.035656  0.000000  0.014326  0.004975
+ -0.018237 -0.003361 -0.028146  0.035310  0.014851
+ -0.003096 -0.021922 -0.027257  0.005457  0.039024
+  0.018634  0.025862 -0.017513  0.018995 -0.004694
+ -0.057927 -0.018487  0.000000 -0.023968 -0.037735
+  0.087379  0.049657  0.033868  0.047748  0.039215
+  0.000000 -0.011419 -0.010345 -0.005208  0.028301
+ -0.019367 -0.011551 -0.022817  0.007853  0.013761
+ -0.046012  0.035893  0.044964  0.040612  0.004608
+ -0.077170 -0.004029 -0.003442  0.003797 -0.027522
+  0.034843 -0.008157 -0.018998  0.008827 -0.014151
+ -0.006734 -0.019737 -0.026408  0.023749  0.014354
+ -0.023729 -0.019295 -0.032550 -0.001221  0.023584
+  0.065972  0.024807  0.057944  0.020782  0.004608
+  0.000000 -0.036728 -0.014134 -0.007185  0.004587
+ -0.052117 -0.058925 -0.069892  0.009650  0.009132
+  0.054983 -0.003683  0.026975 -0.002389  0.009049
+ -0.003257 -0.009242 -0.022514  0.005988 -0.013452
+  0.022876  0.033582  0.001919  0.026190  0.004545
+ -0.003195 -0.005415 -0.003831 -0.013921 -0.000165
+  0.043590 -0.014519 -0.013385  0.021176  0.013824
+ -0.009317  0.013812  0.021654 -0.014927 -0.009090
+ -0.056426 -0.005557 -0.003854 -0.023696 -0.018348
+  0.003322 -0.041475 -0.029014 -0.002427 -0.004672
+  0.016556  0.017308  0.033864  0.034063  0.009389
+ -0.009772 -0.016068 -0.003854  0.014117  0.013953
+  0.026316 -0.016330 -0.009671  0.032482  0.027522
+  0.009615  0.009766  0.017578  0.016247  0.017857
+ -0.047619 -0.027079 -0.051823 -0.045468 -0.021929
+ -0.026667 -0.061630 -0.056680 -0.013452 -0.040358
+  0.010274  0.023305  0.034335 -0.018181 -0.004672
+ -0.044068  0.020704 -0.006224 -0.018518  0.004694
+  0.039007  0.038540  0.024988 -0.028301  0.032710
+ -0.039457 -0.029297 -0.065844 -0.015837 -0.045758
+  0.039568  0.024145 -0.006608  0.028423 -0.009661
+ -0.031142 -0.007941  0.011080  0.007537  0.014634
+  0.000000 -0.020080 -0.006579  0.029925 -0.004807
+  0.021429  0.049180  0.006622 -0.002421  0.028985
+  0.045454  0.046375  0.074561  0.014563  0.018779
+  0.050167  0.036380  0.004082 -0.011961  0.009216
+  0.019108 -0.033303  0.008362  0.033898  0.004566
+
+T08_05    14    5 format
+) Data from Table 8.5 p. 470 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from the erroneously named file T8-4.DAT
+) on disk from book
+) Census-tract data
+)"%lf %lf %lf %lf %lf"
+(f6.3,f5.1,f6.3,2f5.2)
+ 5.935 14.2 2.265 2.27 2.91
+ 1.523 13.1 0.597 0.75 2.62
+ 2.599 12.7 1.237 1.11 1.72
+ 4.009 15.2 1.649 0.81 3.02
+ 4.687 14.7 2.312 2.50 2.22
+ 8.044 15.6 3.641 4.51 2.36
+ 2.766 13.3 1.244 1.03 1.97
+ 6.538 17.0 2.618 2.39 1.85
+ 6.451 12.9 3.147 5.52 2.01
+ 3.314 12.2 1.606 2.18 1.82
+ 3.777 13.0 2.119 2.83 1.80
+ 1.530 13.8 0.798 0.84 4.25
+ 2.768 13.6 1.336 1.75 2.64
+ 6.585 14.9 2.763 1.91 3.17
+
+T08_06    55    8 format
+) Data from Table 8.6 pp. 473-474 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T8-6.DAT on disk from book
+) National track records for men
+) Col. 1: 100 m (sec)
+) Col. 2: 200 m (sec)
+) Col. 3: 400 m (sec)
+) Col. 4: 800 m (min)
+) Col. 5: 1500 m (min)
+) Col. 6: 5000 m (min)
+) Col. 7: 10,000 m (min)
+) Col. 8: Marathon (min)
+) Col. 9: Country (skipped by format)
+)"%lf %lf %lf %lf %lf %lf %lf %lf"
+(3f6.2,2f5.2,2f6.2,f7.2)
+ 10.39 20.81 46.84 1.81 3.70 14.04 29.36 137.72 Argentina
+ 10.31 20.06 44.84 1.74 3.57 13.28 27.66 128.30 Australia
+ 10.44 20.81 46.82 1.79 3.60 13.26 27.72 135.90 Austria
+ 10.34 20.68 45.04 1.73 3.60 13.22 27.45 129.95 Belgium
+ 10.28 20.58 45.91 1.80 3.75 14.68 30.55 146.62 Bermuda
+ 10.22 20.43 45.21 1.73 3.66 13.62 28.62 133.13 Brazil
+ 10.64 21.52 48.30 1.80 3.85 14.45 30.28 139.95 Burma
+ 10.17 20.22 45.68 1.76 3.63 13.55 28.09 130.15 Canada
+ 10.34 20.80 46.20 1.79 3.71 13.61 29.30 134.03 Chile
+ 10.51 21.04 47.30 1.81 3.73 13.90 29.13 133.53 China
+ 10.43 21.05 46.10 1.82 3.74 13.49 27.88 131.35 Columbia
+ 12.18 23.20 52.94 2.02 4.24 16.70 35.38 164.70 CookIs
+ 10.94 21.90 48.66 1.87 3.84 14.03 28.81 136.58 Costa_Rica
+ 10.35 20.65 45.64 1.76 3.58 13.42 28.19 134.32 Czech
+ 10.56 20.52 45.89 1.78 3.61 13.50 28.11 130.78 Denmark
+ 10.14 20.65 46.80 1.82 3.82 14.91 31.45 154.12 DomRep
+ 10.43 20.69 45.49 1.74 3.61 13.27 27.52 130.87 Finland
+ 10.11 20.38 45.28 1.73 3.57 13.34 27.97 132.30 France
+ 10.12 20.33 44.87 1.73 3.56 13.17 27.42 129.92 GDR
+ 10.16 20.37 44.50 1.73 3.53 13.21 27.61 132.23 FRG
+ 10.11 20.21 44.93 1.70 3.51 13.01 27.51 129.13 GB_NI
+ 10.22 20.71 46.56 1.78 3.64 14.59 28.45 134.60 Greece
+ 10.98 21.82 48.40 1.89 3.80 14.16 30.11 139.33 Guatemala
+ 10.26 20.62 46.02 1.77 3.62 13.49 28.44 132.58 Hungary
+ 10.60 21.42 45.73 1.76 3.73 13.77 28.81 131.98 India
+ 10.59 21.49 47.80 1.84 3.92 14.73 30.79 148.83 Indonesia
+ 10.61 20.96 46.30 1.79 3.56 13.32 27.81 132.35 Ireland
+ 10.71 21.00 47.80 1.77 3.72 13.66 28.93 137.55 Israel
+ 10.01 19.72 45.26 1.73 3.60 13.23 27.52 131.08 Italy
+ 10.34 20.81 45.86 1.79 3.64 13.41 27.72 128.63 Japan
+ 10.46 20.66 44.92 1.73 3.55 13.10 27.38 129.75 Kenya
+ 10.34 20.89 46.90 1.79 3.77 13.96 29.23 136.25 Korea
+ 10.91 21.94 47.30 1.85 3.77 14.13 29.67 130.87 DPRKorea
+ 10.35 20.77 47.40 1.82 3.67 13.64 29.08 141.27 Luxembourg
+ 10.40 20.92 46.30 1.82 3.80 14.64 31.01 154.10 Malaysia
+ 11.19 22.45 47.70 1.88 3.83 15.06 31.77 152.23 Mauritius
+ 10.42 21.30 46.10 1.80 3.65 13.46 27.95 129.20 Mexico
+ 10.52 20.95 45.10 1.74 3.62 13.36 27.61 129.02 Netherlands
+ 10.51 20.88 46.10 1.74 3.54 13.21 27.70 128.98 NZ
+ 10.55 21.16 46.71 1.76 3.62 13.34 27.69 131.48 Norway
+ 10.96 21.78 47.90 1.90 4.01 14.72 31.36 148.22 PNG
+ 10.78 21.64 46.24 1.81 3.83 14.74 30.64 145.27 Philippines
+ 10.16 20.24 45.36 1.76 3.60 13.29 27.89 131.58 Poland
+ 10.53 21.17 46.70 1.79 3.62 13.13 27.38 128.65 Portugal
+ 10.41 20.98 45.87 1.76 3.64 13.25 27.67 132.50 Rumania
+ 10.38 21.28 47.40 1.88 3.89 15.11 31.32 157.77 Singapore
+ 10.42 20.77 45.98 1.76 3.55 13.31 27.73 131.57 Spain
+ 10.25 20.61 45.63 1.77 3.61 13.29 27.94 130.63 Sweden
+ 10.37 20.46 45.78 1.78 3.55 13.22 27.91 131.20 Switzerland
+ 10.59 21.29 46.80 1.79 3.77 14.07 30.07 139.27 Taipei
+ 10.39 21.09 47.91 1.83 3.84 15.23 32.56 149.90 Thailand
+ 10.71 21.43 47.60 1.79 3.67 13.56 28.58 131.50 Turkey
+  9.93 19.75 43.86 1.73 3.53 13.20 27.43 128.22 USA
+ 10.07 20.00 44.60 1.75 3.59 13.20 27.53 130.55 USSR
+ 10.82 21.86 49.00 2.02 4.24 16.28 34.71 161.83 WSamoa
+
+P09_15            8     8 LABELS
+) Data from Problem 9.15 in Chapter 9 p. 537 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P8-15.DAT on disk from book
+) The upper triangle has been filled in and variable labels added
+) Correlation matrix for 8 accounting and market-value measures
+) of profitability
+) Var. 1: HRA = historical return on assets
+) Var. 2: HRE = historical return on equity
+) Var. 3: HRS = historical return on sales
+) Var. 4: RRA = replacement return on assets
+) Var. 5: RRE = replacement return on equity
+) Var. 6: RRS = replacement return on sales
+) Var. 7: Q   = market Q ratio
+) Var. 8: REV = market relative excess value
+)"%lf %lf %lf %lf %lf %lf %lf %lf"
+  1.000  0.738  0.731  0.828  0.681  0.712  0.625  0.604
+  0.738  1.000  0.520  0.688  0.831  0.543  0.322  0.303
+  0.731  0.520  1.000  0.652  0.513  0.826  0.579  0.617
+  0.828  0.688  0.652  1.000  0.887  0.867  0.639  0.563
+  0.681  0.831  0.513  0.887  1.000  0.692  0.419  0.352
+  0.712  0.543  0.826  0.867  0.692  1.000  0.608  0.610
+  0.625  0.322  0.579  0.639  0.419  0.608  1.000  0.937
+  0.604  0.303  0.617  0.563  0.352  0.610  0.937  1.000
+
+P09_15$LABELS    16 QUOTED COLUMNS
+)"%s %s %s %s %s %s %s %s"
+"HRA" "HRE" "HRS" "RRA" "RRE" "RRS" "Q"   "REV"
+"HRA" "HRE" "HRS" "RRA" "RRE" "RRS" "Q"   "REV"
+
+E09_06    10    10 format
+) Data from Example 6 in Chapter 9 p. 495 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file E9-6.DAT on disk from book
+) The upper triangle has been filled in
+) Correlations of Olympic decathlon data
+) Variable  1: 100-m run
+) Variable  2: long jump
+) Variable  3: shot put
+) Variable  4: high jump
+) Variable  5: 400-m run
+) Variable  6: 110-m hurdles
+) Variable  7: discus
+) Variable  8: pole vault
+) Variable  9: javelin
+) Variable 10: 1500-m run
+)"%lf %lf %lf %lf %lf %lf %lf %lf %lf %lf"
+(10f6.2)
+  1.00  0.59  0.35  0.34  0.63  0.40  0.28  0.20  0.11 -0.07
+  0.59  1.00  0.42  0.51  0.49  0.52  0.31  0.36  0.21  0.09
+  0.35  0.42  1.00  0.38  0.19  0.36  0.73  0.24  0.44 -0.08
+  0.34  0.51  0.38  1.00  0.29  0.46  0.27  0.39  0.17  0.18
+  0.63  0.49  0.19  0.29  1.00  0.34  0.17  0.23  0.13  0.39
+  0.40  0.52  0.36  0.46  0.34  1.00  0.32  0.33  0.18  0.00
+  0.28  0.31  0.73  0.27  0.17  0.32  1.00  0.24  0.34 -0.02
+  0.20  0.36  0.24  0.39  0.23  0.33  0.24  1.00  0.24  0.17
+  0.11  0.21  0.44  0.17  0.13  0.18  0.34  0.24  1.00  0.00
+ -0.07  0.09 -0.08  0.18  0.39  0.00 -0.02  0.17  0.00  1.00
+
+E09_08           6     6 LABELS
+) Data from Example 8 in Chapter 9, p. 502 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file E9-8.DAT on disk from book
+) The upper triangle has been filled in and labels added
+) Correlations of exam scores in 6 subject areas for n = 220
+) male students.
+) Variable 1: Gaelic
+) Variable 2: English
+) Variable 3: History
+) Variable 4: Arithmetic
+) Variable 5: Algebra
+) Variable 6: Geometry
+)"%lf %lf %lf %lf %lf %lf"
+  1.000  0.439  0.410  0.288  0.329  0.248
+  0.439  1.000  0.351  0.354  0.320  0.329
+  0.410  0.351  1.000  0.164  0.190  0.181
+  0.288  0.354  0.164  1.000  0.595  0.470
+  0.329  0.320  0.190  0.595  1.000  0.464
+  0.248  0.329  0.181  0.470  0.464  1.000
+
+E09_08$LABELS    12 QUOTED COLUMNS
+)"%s %s %s %s %s %s"
+"Gaelic"  "English"  "History"  "Arithmetic"  "Algebra"  "Geometry"
+"Gaelic"  "English"  "History"  "Arithmetic"  "Algebra"  "Geometry"
+
+E09_14           6     6  labels
+) Data from Example 14 in Chapter 9, p. 519 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file E9-8.DAT on disk from book
+) The upper triangle has been filled in and labels added
+) Variable 1: Skull length
+) Variable 2: Skull breadth
+) Variable 3: Femur length
+) Variable 4: Tibia length
+) Variable 5: Humerus length
+) Variable 6: Ulna length
+)"%lf %lf %lf %lf %lf %lf"
+(6f7.3)
+  1.000  0.505  0.569  0.602  0.621  0.603
+  0.505  1.000  0.422  0.467  0.482  0.450
+  0.569  0.422  1.000  0.926  0.877  0.878
+  0.602  0.467  0.926  1.000  0.874  0.894
+  0.621  0.482  0.877  0.874  1.000  0.937
+  0.603  0.450  0.878  0.894  0.937  1.000
+
+E09_14$LABELS    12 QUOTED COLUMNS
+) Row and column labels for data set E09_14
+)"%s %s %s %s %s %s"
+"SklLen"   "SklBrdth" "FemurLen" "TibiaLen" "HumLen"   "UlnaLen"
+"SklLen"   "SklBrdth" "FemurLen" "TibiaLen" "HumLen"   "UlnaLen"
+  
+T09_12    50    7 format
+) Data from Table 9.12 p. 539 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T9-12.DAT on disk from book
+) Salespeople data
+) Col. 1: x1 = Index of sales growth
+) Col. 2: x2 = Index of sales profitability
+) Col. 3: x3 = Index of new-account sales
+) Col. 4: x4 = Score on creativity test
+) Col. 5: x5 = Score on mechanical reasoning test
+) Col. 6: x6 = Score on abstract reasoning test
+) Col. 7: x7 = Score on mathematics test
+)"%lf %lf %lf %lf %lf %lf %lf"
+(3f6.1,4f3.0)
+  93.0  96.0  97.8  9 12  9 20
+  88.8  91.8  96.8  7 10 10 15
+  95.0 100.3  99.0  8 12  9 26
+ 101.3 103.8 106.8 13 14 12 29
+ 102.0 107.8 103.0 10 15 12 32
+  95.8  97.5  99.3 10 14 11 21
+  95.5  99.5  99.0  9 12  9 25
+ 110.8 122.0 115.3 18 20 15 51
+ 102.8 108.3 103.8 10 17 13 31
+ 106.8 120.5 102.0 14 18 11 39
+ 103.3 109.8 104.0 12 17 12 32
+  99.5 111.8 100.3 10 18  8 31
+ 103.5 112.5 107.0 16 17 11 34
+  99.5 105.5 102.3  8 10 11 34
+ 100.0 107.0 102.8 13 10  8 34
+  81.5  93.5  95.0  7  9  5 16
+ 101.3 105.3 102.8 11 12 11 32
+ 103.3 110.8 103.5 11 14 11 35
+  95.3 104.3 103.0  5 14 13 30
+  99.5 105.3 106.3 17 17 11 27
+  88.5  95.3  95.8 10 12  7 15
+  99.3 115.0 104.3  5 11 11 42
+  87.5  92.5  95.8  9  9  7 16
+ 105.3 114.0 105.3 12 15 12 37
+ 107.0 121.0 109.0 16 19 12 39
+  93.3 102.0  97.8 10 15  7 23
+ 106.8 118.0 107.3 14 16 12 39
+ 106.8 120.0 104.8 10 16 11 49
+  92.3  90.8  99.8  8 10 13 17
+ 106.3 121.0 104.5  9 17 11 44
+ 106.0 119.5 110.5 18 15 10 43
+  88.3  92.8  96.8 13 11  8 10
+  96.0 103.3 100.5  7 15 11 27
+  94.3  94.5  99.0 10 12 11 19
+ 106.5 121.5 110.5 18 17 10 42
+ 106.5 115.5 107.0  8 13 14 47
+  92.0  99.5 103.5 18 16  8 18
+ 102.0  99.8 103.3 13 12 14 28
+ 108.3 122.3 108.5 15 19 12 41
+ 106.8 119.0 106.8 14 20 12 37
+ 102.5 109.3 103.8  9 17 13 32
+  92.5 102.5  99.3 13 15  6 23
+ 102.8 113.8 106.8 17 20 10 32
+  83.3  87.3  96.3  1  5  9 15
+  94.8 101.8  99.8  7 16 11 24
+ 103.5 112.0 110.8 18 13 12 37
+  89.5  96.0  97.3  7 15 11 14
+  84.3  89.8  94.3  8  8  8  9
+ 104.3 109.5 106.5 14 12 12 36
+ 106.0 118.5 105.0 12 16 11 39
+
+E10_04     4     4 format labels
+) Data from Example 4 in Chapter 10 p. 559 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file E10-4.DAT on disk from book
+) The upper triangle has been filled in symmetrically
+) Chicken-bone data correlations
+) Variable 1: skull length
+) Variable 2: skull breadth
+) Variable 3: femur length
+) Variable 4: tibia length
+)"%lf %lf %lf %lf"
+(4f6.3)
+ 1.000 0.505 0.569 0.602
+ 0.505 1.000 0.422 0.467
+ 0.569 0.422 1.000 0.926
+ 0.602 0.467 0.926 1.000
+
+E10_04$LABELS     8 QUOTED COLUMNS
+) Row and column labels for data set E10_04
+)"%s %s %s %s"
+"SklLen"   "SklBrdth" "FemurLen" "TibiaLen"
+"SklLen"   "SklBrdth" "FemurLen" "TibiaLen"
+
+E10_05    12    12 format
+) Data from Example 5 in Chapter 10 p. 561 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file E10-5.DAT on disk from book
+) The upper triangle has been filled in symmetrically
+) Organizational-structure data correlations based on 5 job
+) characteristics and 7 job satisfaction variables for 784
+) executives from the corporate branch of a large retail
+) merchandising corporation.
+) Variable 1: x1(1) = feedback
+) Variable 2: x2(1) = task significance
+) Variable 3: x3(1) = task variety
+) Variable 4: x4(1) = task identity
+) Variable 5: x5(1) = autonomy
+) Variable 6: x1(2) = supervisor satisfaction
+) Variable 7: x2(2) = career-future satisfaction
+) Variable 8: x3(2) = financial satisfaction
+) Variable 9: x4(2) = workload satisfaction
+) Variable 10: x5(2) = company identification
+) Variable 11: x6(2) = kind-of-work-satisfaction
+) Variable 12: x7(2) = general satisfaction
+)"%lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf"
+(12f5.2)
+ 1.00 0.49 0.53 0.49 0.51 0.33 0.32 0.20 0.19 0.30 0.37 0.21
+ 0.49 1.00 0.57 0.46 0.53 0.30 0.21 0.16 0.08 0.27 0.35 0.20
+ 0.53 0.57 1.00 0.48 0.57 0.31 0.23 0.14 0.07 0.24 0.37 0.18
+ 0.49 0.46 0.48 1.00 0.57 0.24 0.22 0.12 0.19 0.21 0.29 0.16
+ 0.51 0.53 0.57 0.57 1.00 0.38 0.32 0.17 0.23 0.32 0.36 0.27
+ 0.33 0.30 0.31 0.24 0.38 1.00 0.43 0.27 0.24 0.34 0.37 0.40
+ 0.32 0.21 0.23 0.22 0.32 0.43 1.00 0.33 0.26 0.54 0.32 0.58
+ 0.20 0.16 0.14 0.12 0.17 0.27 0.33 1.00 0.25 0.46 0.29 0.45
+ 0.19 0.08 0.07 0.19 0.23 0.24 0.26 0.25 1.00 0.28 0.30 0.27
+ 0.30 0.27 0.24 0.21 0.32 0.34 0.54 0.46 0.28 1.00 0.35 0.59
+ 0.37 0.35 0.37 0.29 0.36 0.37 0.32 0.29 0.30 0.35 1.00 0.31
+ 0.21 0.20 0.18 0.16 0.27 0.40 0.58 0.45 0.27 0.59 0.31 1.00
+
+P10_08C    3    3 format
+) Data from Problem 8 (c), p. 574 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P10-8C.DAT on disk from book
+) The upper triangle has been filled in symmetrically
+) Ozone and wind direction correlations
+) Variable 1: ozone
+) Variable 2: cos(theta2)
+) Variable 3: sin(theta2)
+)"%lf %lf %lf"
+(f6.3,2f7.3)
+ 1.000  0.166  0.694
+ 0.166  1.000 -0.051
+ 0.694 -0.051  1.000
+
+P10_08E    4    4 format
+) Data from Problem 8 (e), p. 575 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P10-8E.DAT on disk from book
+) The upper triangle has been filled in symmetrically
+) Wind direction correlations
+) Variable 1: cos(theta1)
+) Variable 2: sin(theta1)
+) Variable 3: cos(theta2)
+) Variable 4: sin(theta2)
+)"%lf %lf %lf %lf"
+(4f7.3)
+  1.000 -0.291  0.440  0.372
+ -0.291  1.000 -0.205  0.243
+  0.440 -0.205  1.000  0.181
+  0.372  0.243  0.181  1.000
+
+P10_09    4    4 format
+) Data from Problem 9 in Chapter 10 p. 575 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P10-9.DAT on disk from book
+) The upper triangle has been filled in symmetrically
+) Correlation matrix from n 7th grade children for variables
+) x1(1) = reading speed
+) x2(1) = reading power
+) x1(2) = arithmetic speed
+) x2(2) = arithmetic power
+)"%lf %lf %lf %lf"
+(f7.4,3f8.4)
+ 1.0000  0.6328  0.2412  0.0586
+ 0.6328  1.0000 -0.0553  0.0655
+ 0.2412 -0.0553  1.0000  0.4248
+ 0.0586  0.0655  0.4248  1.0000
+
+P10_10    4    4 format
+) Data from Problem 10 in Chapter 10 p. 575 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P10-10.DAT on disk from book
+) The upper triangle has been filled in symmetrically
+) Poverty, crime and deterrence correlations for variables
+) x1(1) = 1973 nonprimary homicides
+) x2(1) = 1973 primary homicides
+) x1(2) = 1970 severity of punishment (median months served)
+) x2(2) = 1970 certainty of punishment (proportion of homicides
+)            resulting in imprisonment)
+)"%lf %lf %lf %lf"
+(4f7.3)
+  1.000  0.615 -0.111 -0.266
+  0.615  1.000 -0.195 -0.085
+ -0.111 -0.195  1.000 -0.269
+ -0.266 -0.085 -0.269  1.000
+
+P10_12    5    5 format
+) Data from Problem 12 in Chapter 10 p. 576 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P10-12.DAT on disk from book
+) The upper triangle has been filled in symmetrically
+) Correlations for demographic and consumption variables, n = 70
+) x1(1) = annual frequency of dining in a restaurant
+) x2(1) = annual frequency of attending movies
+) x1(2) = age of head of household
+) x2(2) = annual family income
+) x3(2) = educational level of head of household
+)"%lf %lf %lf %lf %lf"
+(5f5.2)
+ 1.00 0.80 0.26 0.67 0.34
+ 0.80 1.00 0.33 0.59 0.34
+ 0.26 0.33 1.00 0.37 0.21
+ 0.67 0.59 0.37 1.00 0.35
+ 0.34 0.34 0.21 0.35 1.00
+
+P10_16    5    5 format
+) Data from Problem 16 in Chapter 10 p. 578 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P10-16.DAT on disk from book
+) Covariances for n = 46 nondiabetic patients for variables
+) x1(1) = glucose intolerance
+) x2(1) = insulin response to oral glucose
+) x3(1) = insulin resistance
+) x1(2) = relative weight
+) x2(2) = fasting plasma glucose
+)"%lf %lf %lf %lf %lf"
+(3f9.3,f7.3,f8.3)
+ 1106.000  396.700  108.400  0.787  26.230
+  396.700 2382.000 1143.000 -0.214 -23.960
+  108.400 1143.000 2136.000  2.189 -20.840
+	0.787   -0.214    2.189  0.016   0.216
+   26.230  -23.960  -20.840  0.216  70.560
+
+P10_17    12    12 format
+) Data from Problem 17 in Chapter 10 p. 579 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file P10-17.DAT on disk from book
+) Correlations for data on n = 110 subjects' desire to smoke and
+) physical and mental state.  Variables were from 12 questions:
+) z1(1) = smoking 1 (first wording)
+) z2(1) = smoking 2 (second wording)
+) z3(1) = smoking 3 (third wording)
+) z4(1) = smoking 4 (fourth wording)
+) z1(2) = concentration
+) z2(2) = annoyance
+) z3(2) = sleepiness
+) z4(2) = tenseness
+) z5(2) = alertness
+) z6(2) = irritability
+) z7(2) = tiredness
+) z8(2) = contentedness
+)"%lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf"
+(12f6.3)
+ 1.000 0.785 0.810 0.775 0.086 0.144 0.140 0.222 0.101 0.189 0.199 0.239
+ 0.785 1.000 0.816 0.813 0.200 0.119 0.211 0.301 0.223 0.221 0.274 0.235
+ 0.810 0.816 1.000 0.845 0.041 0.060 0.126 0.120 0.039 0.108 0.139 0.100
+ 0.775 0.813 0.845 1.000 0.228 0.122 0.277 0.214 0.201 0.156 0.271 0.171
+ 0.086 0.200 0.041 0.228 1.000 0.562 0.457 0.579 0.802 0.595 0.512 0.492
+ 0.144 0.119 0.060 0.122 0.562 1.000 0.360 0.705 0.578 0.796 0.413 0.739
+ 0.140 0.211 0.126 0.277 0.457 0.360 1.000 0.273 0.606 0.337 0.798 0.240
+ 0.222 0.301 0.120 0.214 0.579 0.705 0.273 1.000 0.594 0.725 0.364 0.711
+ 0.101 0.223 0.039 0.201 0.802 0.578 0.606 0.594 1.000 0.605 0.698 0.605
+ 0.189 0.221 0.108 0.156 0.595 0.796 0.337 0.725 0.605 1.000 0.428 0.697
+ 0.199 0.274 0.139 0.271 0.512 0.413 0.798 0.364 0.698 0.428 1.000 0.394
+ 0.239 0.235 0.100 0.171 0.492 0.739 0.240 0.711 0.605 0.697 0.394 1.000
+
+T11_01    24    3 format
+) Data from Table 11.1 p. 584 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T11-1.DAT on disk from book
+) Group identification variable moved to column 1
+) Col. 1: Group (1 = riding-mower owners, 2 = nonowners_
+) Col. 2: x1 = income ($1000)
+) Col. 3: x2 = lot size (1000 ft^2)
+)"%lf %lf %lf"
+(f2.0,2f6.1)
+ 1  60.0  18.4
+ 1  85.5  16.8
+ 1  64.8  21.6
+ 1  61.5  20.8
+ 1  87.0  23.6
+ 1 110.1  19.2
+ 1 108.0  17.6
+ 1  82.8  22.4
+ 1  69.0  20.0
+ 1  93.0  20.8
+ 1  51.0  22.0
+ 1  81.0  20.0
+ 2  75.0  19.6
+ 2  52.8  20.8
+ 2  64.8  17.2
+ 2  43.2  20.4
+ 2  84.0  17.6
+ 2  49.2  17.6
+ 2  59.4  16.0
+ 2  66.0  18.4
+ 2  47.4  16.4
+ 2  33.0  18.8
+ 2  51.0  14.0
+ 2  63.0  14.8
+
+T11_02    100    4 format
+) Data from Table 11.2, p. 607 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T11-2.DAT on disk from book
+) Salmon data (growth-ring diameters)
+) Col. 1: location (1 = Alaskan, 2 = Canadian)
+) Col. 2: gender (1 = female, 2 = male)
+) Col. 3: X1 = diameter of rings for 1st yr freshwater growth (.01 in)
+) Col. 4: X2 = diameter of rings for 1st yr marine growth (.01 in)
+)"%lf %lf %lf %lf"
+(2f2.0,2f4.0)
+ 1 2 108 368
+ 1 1 131 355
+ 1 1 105 469
+ 1 2  86 506
+ 1 1  99 402
+ 1 2  87 423
+ 1 1  94 440
+ 1 2 117 489
+ 1 2  79 432
+ 1 1  99 403
+ 1 1 114 428
+ 1 2 123 372
+ 1 1 123 372
+ 1 2 109 420
+ 1 2 112 394
+ 1 1 104 407
+ 1 2 111 422
+ 1 2 126 423
+ 1 2 105 434
+ 1 1 119 474
+ 1 1 114 396
+ 1 2 100 470
+ 1 2  84 399
+ 1 2 102 429
+ 1 2 101 469
+ 1 2  85 444
+ 1 1 109 397
+ 1 2 106 442
+ 1 1  82 431
+ 1 2 118 381
+ 1 1 105 388
+ 1 1 121 403
+ 1 1  85 451
+ 1 1  83 453
+ 1 1  53 427
+ 1 1  95 411
+ 1 1  76 442
+ 1 1  95 426
+ 1 2  87 402
+ 1 1  70 397
+ 1 2  84 511
+ 1 2  91 469
+ 1 1  74 451
+ 1 2 101 474
+ 1 1  80 398
+ 1 1  95 433
+ 1 2  92 404
+ 1 1  99 481
+ 1 2  94 491
+ 1 1  87 480
+ 2 1 129 420
+ 2 1 148 371
+ 2 1 179 407
+ 2 2 152 381
+ 2 2 166 377
+ 2 2 124 389
+ 2 1 156 419
+ 2 2 131 345
+ 2 1 140 362
+ 2 2 144 345
+ 2 2 149 393
+ 2 1 108 330
+ 2 1 135 355
+ 2 2 170 386
+ 2 1 152 301
+ 2 1 153 397
+ 2 1 152 301
+ 2 2 136 438
+ 2 2 122 306
+ 2 1 148 383
+ 2 2  90 385
+ 2 1 145 337
+ 2 1 123 364
+ 2 2 145 376
+ 2 2 115 354
+ 2 2 134 383
+ 2 1 117 355
+ 2 2 126 345
+ 2 1 118 379
+ 2 2 120 369
+ 2 1 153 403
+ 2 2 150 354
+ 2 1 154 390
+ 2 1 155 349
+ 2 2 109 325
+ 2 2 117 344
+ 2 1 128 400
+ 2 1 144 403
+ 2 2 163 370
+ 2 2 145 355
+ 2 1 133 375
+ 2 1 128 383
+ 2 2 123 349
+ 2 1 144 373
+ 2 2 140 388
+ 2 2 150 339
+ 2 2 124 341
+ 2 1 125 346
+ 2 1 153 352
+ 2 1 108 339
+
+T11_04    46    5 format
+) Data from Table 11.4 p. 655 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T11-4.DAT on disk from book
+) Bankruptcy data
+) Population identifier (0 or 1) moved to column 1
+) Col. 1: Population (0 - population 1, 1 = population 2)
+) Col. 2: x1 = CF/TD
+) Col. 3: x2 = NI/TA
+) Col. 4: x3 = CA/CL
+) Col. 5: x4 = CA/NS
+)"%lf %lf %lf %lf %lf"
+(f2.0,4f6.2)
+ 0 -0.45 -0.41  1.09  0.45
+ 0 -0.56 -0.31  1.51  0.16
+ 0  0.06  0.02  1.01  0.40
+ 0 -0.07 -0.09  1.45  0.26
+ 0 -0.10 -0.09  1.56  0.67
+ 0 -0.14 -0.07  0.71  0.28
+ 0  0.04  0.01  1.50  0.71
+ 0 -0.07 -0.06  1.37  0.40
+ 0  0.07 -0.01  1.37  0.34
+ 0 -0.14 -0.14  1.42  0.43
+ 0 -0.23 -0.30  0.33  0.18
+ 0  0.07  0.02  1.31  0.25
+ 0  0.01  0.00  2.15  0.70
+ 0 -0.28 -0.23  1.19  0.66
+ 0  0.15  0.05  1.88  0.27
+ 0  0.37  0.11  1.99  0.38
+ 0 -0.08 -0.08  1.51  0.42
+ 0  0.05  0.03  1.68  0.95
+ 0  0.01  0.00  1.26  0.60
+ 0  0.12  0.11  1.14  0.17
+ 0 -0.28 -0.27  1.27  0.51
+ 1  0.51  0.10  2.49  0.54
+ 1  0.08  0.02  2.01  0.53
+ 1  0.38  0.11  3.27  0.35
+ 1  0.19  0.05  2.25  0.33
+ 1  0.32  0.07  4.24  0.63
+ 1  0.31  0.05  4.45  0.69
+ 1  0.12  0.05  2.52  0.69
+ 1 -0.02  0.02  2.05  0.35
+ 1  0.22  0.08  2.35  0.40
+ 1  0.17  0.07  1.80  0.52
+ 1  0.15  0.05  2.17  0.55
+ 1 -0.10 -0.01  2.50  0.58
+ 1  0.14 -0.03  0.46  0.26
+ 1  0.14  0.07  2.61  0.52
+ 1  0.15  0.06  2.23  0.56
+ 1  0.16  0.05  2.31  0.20
+ 1  0.29  0.06  1.84  0.38
+ 1  0.54  0.11  2.33  0.48
+ 1 -0.33 -0.09  3.01  0.47
+ 1  0.48  0.09  1.24  0.18
+ 1  0.56  0.11  4.29  0.44
+ 1  0.20  0.08  1.99  0.30
+ 1  0.47  0.14  2.92  0.45
+ 1  0.17  0.04  2.45  0.14
+ 1  0.58  0.04  5.06  0.13
+
+T11_05    150    5 format labels
+) Data from Table 11.5 p. 657-658 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T11-5.DAT on disk from book
+) The variety number was moved to column 1
+) Measurements on petals of 4 varieties of Iris.  Originally published in
+) R. A. Fisher, The use of mltiple measurements in taxonomic problems,
+) Annals of Eugenics, 7 (1936) 179-198
+) Col. 1: variety number (1 = I. setosa, 2 = I. versicolor,
+)                         3 = I. virginica)
+) Col. 2: x1 = sepal length
+) Col. 3: x2 = sepal width
+) Col. 4: x3 = petal length
+) Col. 5: x4 = petal width
+) Rows 1-50:    group 1 = Iris setosa
+) Rows 51-100:  group 2 = Iris versicolor in
+) Rows 101-150: group 3 = Iris virginica in
+)"%lf %lf %lf %lf %lf"
+(f2.0,4f4.1)
+ 1 5.1 3.5 1.4 0.2
+ 1 4.9 3.0 1.4 0.2
+ 1 4.7 3.2 1.3 0.2
+ 1 4.6 3.1 1.5 0.2
+ 1 5.0 3.6 1.4 0.2
+ 1 5.4 3.9 1.7 0.4
+ 1 4.6 3.4 1.4 0.3
+ 1 5.0 3.4 1.5 0.2
+ 1 4.4 2.9 1.4 0.2
+ 1 4.9 3.1 1.5 0.1
+ 1 5.4 3.7 1.5 0.2
+ 1 4.8 3.4 1.6 0.2
+ 1 4.8 3.0 1.4 0.1
+ 1 4.3 3.0 1.1 0.1
+ 1 5.8 4.0 1.2 0.2
+ 1 5.7 4.4 1.5 0.4
+ 1 5.4 3.9 1.3 0.4
+ 1 5.1 3.5 1.4 0.3
+ 1 5.7 3.8 1.7 0.3
+ 1 5.1 3.8 1.5 0.3
+ 1 5.4 3.4 1.7 0.2
+ 1 5.1 3.7 1.5 0.4
+ 1 4.6 3.6 1.0 0.2
+ 1 5.1 3.3 1.7 0.5
+ 1 4.8 3.4 1.9 0.2
+ 1 5.0 3.0 1.6 0.2
+ 1 5.0 3.4 1.6 0.4
+ 1 5.2 3.5 1.5 0.2
+ 1 5.2 3.4 1.4 0.2
+ 1 4.7 3.2 1.6 0.2
+ 1 4.8 3.1 1.6 0.2
+ 1 5.4 3.4 1.5 0.4
+ 1 5.2 4.1 1.5 0.1
+ 1 5.5 4.2 1.4 0.2
+ 1 4.9 3.1 1.5 0.2
+ 1 5.0 3.2 1.2 0.2
+ 1 5.5 3.5 1.3 0.2
+ 1 4.9 3.6 1.4 0.1
+ 1 4.4 3.0 1.3 0.2
+ 1 5.1 3.4 1.5 0.2
+ 1 5.0 3.5 1.3 0.3
+ 1 4.5 2.3 1.3 0.3
+ 1 4.4 3.2 1.3 0.2
+ 1 5.0 3.5 1.6 0.6
+ 1 5.1 3.8 1.9 0.4
+ 1 4.8 3.0 1.4 0.3
+ 1 5.1 3.8 1.6 0.2
+ 1 4.6 3.2 1.4 0.2
+ 1 5.3 3.7 1.5 0.2
+ 1 5.0 3.3 1.4 0.2
+ 2 7.0 3.2 4.7 1.4
+ 2 6.4 3.2 4.5 1.5
+ 2 6.9 3.1 4.9 1.5
+ 2 5.5 2.3 4.0 1.3
+ 2 6.5 2.8 4.6 1.5
+ 2 5.7 2.8 4.5 1.3
+ 2 6.3 3.3 4.7 1.6
+ 2 4.9 2.4 3.3 1.0
+ 2 6.6 2.9 4.6 1.3
+ 2 5.2 2.7 3.9 1.4
+ 2 5.0 2.0 3.5 1.0
+ 2 5.9 3.0 4.2 1.5
+ 2 6.0 2.2 4.0 1.0
+ 2 6.1 2.9 4.7 1.4
+ 2 5.6 2.9 3.6 1.3
+ 2 6.7 3.1 4.4 1.4
+ 2 5.6 3.0 4.5 1.5
+ 2 5.8 2.7 4.1 1.0
+ 2 6.2 2.2 4.5 1.5
+ 2 5.6 2.5 3.9 1.1
+ 2 5.9 3.2 4.8 1.8
+ 2 6.1 2.8 4.0 1.3
+ 2 6.3 2.5 4.9 1.5
+ 2 6.1 2.8 4.7 1.2
+ 2 6.4 2.9 4.3 1.3
+ 2 6.6 3.0 4.4 1.4
+ 2 6.8 2.8 4.8 1.4
+ 2 6.7 3.0 5.0 1.7
+ 2 6.0 2.9 4.5 1.5
+ 2 5.7 2.6 3.5 1.0
+ 2 5.5 2.4 3.8 1.1
+ 2 5.5 2.4 3.7 1.0
+ 2 5.8 2.7 3.9 1.2
+ 2 6.0 2.7 5.1 1.6
+ 2 5.4 3.0 4.5 1.5
+ 2 6.0 3.4 4.5 1.6
+ 2 6.7 3.1 4.7 1.5
+ 2 6.3 2.3 4.4 1.3
+ 2 5.6 3.0 4.1 1.3
+ 2 5.5 2.5 4.0 1.3
+ 2 5.5 2.6 4.4 1.2
+ 2 6.1 3.0 4.6 1.4
+ 2 5.8 2.6 4.0 1.2
+ 2 5.0 2.3 3.3 1.0
+ 2 5.6 2.7 4.2 1.3
+ 2 5.7 3.0 4.2 1.2
+ 2 5.7 2.9 4.2 1.3
+ 2 6.2 2.9 4.3 1.3
+ 2 5.1 2.5 3.0 1.1
+ 2 5.7 2.8 4.1 1.3
+ 3 6.3 3.3 6.0 2.5
+ 3 5.8 2.7 5.1 1.9
+ 3 7.1 3.0 5.9 2.1
+ 3 6.3 2.9 5.6 1.8
+ 3 6.5 3.0 5.8 2.2
+ 3 7.6 3.0 6.6 2.1
+ 3 4.9 2.5 4.5 1.7
+ 3 7.3 2.9 6.3 1.8
+ 3 6.7 2.5 5.8 1.8
+ 3 7.2 3.6 6.1 2.5
+ 3 6.5 3.2 5.1 2.0
+ 3 6.4 2.7 5.3 1.9
+ 3 6.8 3.0 5.5 2.1
+ 3 5.7 2.5 5.0 2.0
+ 3 5.8 2.8 5.1 2.4
+ 3 6.4 3.2 5.3 2.3
+ 3 6.5 3.0 5.5 1.8
+ 3 7.7 3.8 6.7 2.2
+ 3 7.7 2.6 6.9 2.3
+ 3 6.0 2.2 5.0 1.5
+ 3 6.9 3.2 5.7 2.3
+ 3 5.6 2.8 4.9 2.0
+ 3 7.7 2.8 6.7 2.0
+ 3 6.3 2.7 4.9 1.8
+ 3 6.7 3.3 5.7 2.1
+ 3 7.2 3.2 6.0 1.8
+ 3 6.2 2.8 4.8 1.8
+ 3 6.1 3.0 4.9 1.8
+ 3 6.4 2.8 5.6 2.1
+ 3 7.2 3.0 5.8 1.6
+ 3 7.4 2.8 6.1 1.9
+ 3 7.9 3.8 6.4 2.0
+ 3 6.4 2.8 5.6 2.2
+ 3 6.3 2.8 5.1 1.5
+ 3 6.1 2.6 5.6 1.4
+ 3 7.7 3.0 6.1 2.3
+ 3 6.3 3.4 5.6 2.4
+ 3 6.4 3.1 5.5 1.8
+ 3 6.0 3.0 4.8 1.8
+ 3 6.9 3.1 5.4 2.1
+ 3 6.7 3.1 5.6 2.4
+ 3 6.9 3.1 5.1 2.3
+ 3 5.8 2.7 5.1 1.9
+ 3 6.8 3.2 5.9 2.3
+ 3 6.7 3.3 5.7 2.5
+ 3 6.7 3.0 5.2 2.3
+ 3 6.3 2.5 5.0 1.9
+ 3 6.5 3.0 5.2 2.0
+ 3 6.2 3.4 5.4 2.3
+ 3 5.9 3.0 5.1 1.8
+
+T11_05$labels  6  COLUMNS CHARACTER
+) Labels for T11_05
+) Case labels are expanded from "@"
+)"%s %s %s %s %s %s"
+@   Variety SepLen  SepWid   PetLen   PetWid
+
+T11_06    85    3 format
+) Data from Table 11.6 p. 659 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T11-6.DAT on disk from book
+) Group numbers were moved to column 1
+) Admission data from Graduate School of Business
+) Col. 1: Group number (1 = admit, 2 = do not admit, 3 = borderline)
+) Col. 2: x1 = GPA
+) Col. 3: x2 = GMAT
+)"%lf %lf %lf"
+(f2.0,f5.2,f4.0)
+ 1 2.96 596
+ 1 3.14 473
+ 1 3.22 482
+ 1 3.29 527
+ 1 3.69 505
+ 1 3.46 693
+ 1 3.03 626
+ 1 3.19 663
+ 1 3.63 447
+ 1 3.59 588
+ 1 3.30 563
+ 1 3.40 553
+ 1 3.50 572
+ 1 3.78 591
+ 1 3.44 692
+ 1 3.48 528
+ 1 3.47 552
+ 1 3.35 520
+ 1 3.39 543
+ 1 3.28 523
+ 1 3.21 530
+ 1 3.58 564
+ 1 3.33 565
+ 1 3.40 431
+ 1 3.38 605
+ 1 3.26 664
+ 1 3.60 609
+ 1 3.37 559
+ 1 3.80 521
+ 1 3.76 646
+ 1 3.24 467
+ 2 2.54 446
+ 2 2.43 425
+ 2 2.20 474
+ 2 2.36 531
+ 2 2.57 542
+ 2 2.35 406
+ 2 2.51 412
+ 2 2.51 458
+ 2 2.36 399
+ 2 2.36 482
+ 2 2.66 420
+ 2 2.68 414
+ 2 2.48 533
+ 2 2.46 509
+ 2 2.63 504
+ 2 2.44 336
+ 2 2.13 408
+ 2 2.41 469
+ 2 2.55 538
+ 2 2.31 505
+ 2 2.41 489
+ 2 2.19 411
+ 2 2.35 321
+ 2 2.60 394
+ 2 2.55 528
+ 2 2.72 399
+ 2 2.85 381
+ 2 2.90 384
+ 3 2.86 494
+ 3 2.85 496
+ 3 3.14 419
+ 3 3.28 371
+ 3 2.89 447
+ 3 3.15 313
+ 3 3.50 402
+ 3 2.89 485
+ 3 2.80 444
+ 3 3.13 416
+ 3 3.01 471
+ 3 2.79 490
+ 3 2.89 431
+ 3 2.91 446
+ 3 2.75 546
+ 3 2.73 467
+ 3 3.12 463
+ 3 3.08 440
+ 3 3.03 419
+ 3 3.00 509
+ 3 3.03 438
+ 3 3.05 399
+ 3 2.85 483
+ 3 3.01 453
+ 3 3.03 414
+ 3 3.04 446
+
+T11_07    56    6 format
+) Data from Table 11.7 p. 661 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T11-7.DAT on disk from book
+) Group identification was moved from last column to first and
+) made numeric
+) Crude oil data
+) Col. 1: Zone (1 = Wilhelm, 2 = sub-Mulinia, 3 = Upper
+) Col. 2: X1 = vanadium (percent ash)
+) Col. 3: X2 = iron (percent ash)
+) Col. 4: X3 = beryllium (percent ash)
+) Col. 5: X4 = saturated hydrocarbons (percent area)
+) Col. 6: X5 = aromatic hydrocarbons (percent area)
+)"%lf %lf %lf %lf %lf %lf"
+(f2.0,2f5.1,2f5.2,f6.2)
+ 1  3.9 51.0 0.20 7.06 12.19
+ 1  2.7 49.0 0.07 7.14 12.23
+ 1  2.8 36.0 0.30 7.00 11.30
+ 1  3.1 45.0 0.08 7.20 13.01
+ 1  3.5 46.0 0.10 7.81 12.63
+ 1  3.9 43.0 0.07 6.25 10.42
+ 1  2.7 35.0 0.00 5.11  9.00
+ 2  5.0 47.0 0.07 7.06  6.10
+ 2  3.4 32.0 0.20 5.82  4.69
+ 2  1.2 12.0 0.00 5.54  3.15
+ 2  8.4 17.0 0.07 6.31  4.55
+ 2  4.2 36.0 0.50 9.25  4.95
+ 2  4.2 35.0 0.50 5.69  2.22
+ 2  3.9 41.0 0.10 5.63  2.94
+ 2  3.9 36.0 0.07 6.19  2.27
+ 2  7.3 32.0 0.30 8.02 12.92
+ 2  4.4 46.0 0.07 7.54  5.76
+ 2  3.0 30.0 0.00 5.12 10.77
+ 3  6.3 13.0 0.50 4.24  8.27
+ 3  1.7  5.6 1.00 5.69  4.64
+ 3  7.3 24.0 0.00 4.34  2.99
+ 3  7.8 18.0 0.50 3.92  6.09
+ 3  7.8 25.0 0.70 5.39  6.20
+ 3  7.8 26.0 1.00 5.02  2.50
+ 3  9.5 17.0 0.05 3.52  5.71
+ 3  7.7 14.0 0.30 4.65  8.63
+ 3 11.0 20.0 0.50 4.27  8.40
+ 3  8.0 14.0 0.30 4.32  7.87
+ 3  8.4 18.0 0.20 4.38  7.98
+ 3 10.0 18.0 0.10 3.06  7.67
+ 3  7.3 15.0 0.05 3.76  6.84
+ 3  9.5 22.0 0.30 3.98  5.02
+ 3  8.4 15.0 0.20 5.02 10.12
+ 3  8.4 17.0 0.20 4.42  8.25
+ 3  9.5 25.0 0.50 4.44  5.95
+ 3  7.2 22.0 1.00 4.70  3.49
+ 3  4.0 12.0 0.50 5.71  6.32
+ 3  6.7 52.0 0.50 4.80  3.20
+ 3  9.0 27.0 0.30 3.69  3.30
+ 3  7.8 29.0 1.50 6.72  5.75
+ 3  4.5 41.0 0.50 3.33  2.27
+ 3  6.2 34.0 0.70 7.56  6.93
+ 3  5.6 20.0 0.50 5.07  6.70
+ 3  9.0 17.0 0.20 4.39  8.33
+ 3  8.4 20.0 0.10 3.74  3.77
+ 3  9.5 19.0 0.50 3.72  7.37
+ 3  9.0 20.0 0.50 5.97 11.17
+ 3  6.2 16.0 0.05 4.23  4.18
+ 3  7.3 20.0 0.50 4.39  3.50
+ 3  3.6 15.0 0.70 7.00  4.82
+ 3  6.2 34.0 0.07 4.84  2.37
+ 3  7.3 22.0 0.00 4.13  2.70
+ 3  4.1 29.0 0.70 5.78  7.76
+ 3  5.4 29.0 0.20 4.64  2.65
+ 3  5.0 34.0 0.70 4.21  6.50
+ 3  6.2 27.0 0.30 3.97  2.97
+
+T11_08    75    3 format
+) Data from Table 11.8 p. 663 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T11-8.DAT on disk from book
+) Hemophilia data
+) Col. 1: Group (1 = noncarriers, 2 = obligatory carriers)
+) Col. 2: X1 = log10(AHF activity)
+) Col. 3: X2 = log10(AHF-like antigen)
+)"%lf %lf %lf"
+(f2.0,2f8.f)
+ 1 -0.0056 -0.1657
+ 1 -0.1698 -0.1585
+ 1 -0.3469 -0.1879
+ 1 -0.0894  0.0064
+ 1 -0.1679  0.0713
+ 1 -0.0836  0.0106
+ 1 -0.1979 -0.0005
+ 1 -0.0762  0.0392
+ 1 -0.1913 -0.2123
+ 1 -0.1092 -0.1190
+ 1 -0.5268 -0.4773
+ 1 -0.0842  0.0248
+ 1 -0.0225 -0.0580
+ 1  0.0084  0.0782
+ 1 -0.1827 -0.1138
+ 1  0.1237  0.2140
+ 1 -0.4702 -0.3099
+ 1 -0.1519 -0.0686
+ 1  0.0006 -0.1153
+ 1 -0.2015 -0.0498
+ 1 -0.1932 -0.2293
+ 1  0.1507  0.0933
+ 1 -0.1259 -0.0669
+ 1 -0.1551 -0.1232
+ 1 -0.1952 -0.1007
+ 1  0.0291  0.0442
+ 1 -0.2280 -0.1710
+ 1 -0.0997 -0.0733
+ 1 -0.1972 -0.0607
+ 1 -0.0867 -0.0560
+ 2 -0.3478  0.1151
+ 2 -0.3618 -0.2008
+ 2 -0.4986 -0.0860
+ 2 -0.5015 -0.2984
+ 2 -0.1326  0.0097
+ 2 -0.6911 -0.3390
+ 2 -0.3608  0.1237
+ 2 -0.4535 -0.1682
+ 2 -0.3479 -0.1721
+ 2 -0.3539  0.0722
+ 2 -0.4719 -0.1079
+ 2 -0.3610 -0.0399
+ 2 -0.3226  0.1670
+ 2 -0.4319 -0.0687
+ 2 -0.2734 -0.0020
+ 2 -0.5573  0.0548
+ 2 -0.3755 -0.1865
+ 2 -0.4950 -0.0153
+ 2 -0.5107 -0.2483
+ 2 -0.1652  0.2132
+ 2 -0.2447 -0.0407
+ 2 -0.4232 -0.0998
+ 2 -0.2375  0.2876
+ 2 -0.2205  0.0046
+ 2 -0.2154 -0.0219
+ 2 -0.3447  0.0097
+ 2 -0.2540 -0.0573
+ 2 -0.3778 -0.2682
+ 2 -0.4046 -0.1162
+ 2 -0.0639  0.1569
+ 2 -0.3351 -0.1368
+ 2 -0.0149  0.1539
+ 2 -0.0312  0.1400
+ 2 -0.1740 -0.0776
+ 2 -0.1416  0.1642
+ 2 -0.1508  0.1137
+ 2 -0.0964  0.0531
+ 2 -0.2642  0.0867
+ 2 -0.0234  0.0804
+ 2 -0.3352  0.0875
+ 2 -0.1878  0.2510
+ 2 -0.1744  0.1892
+ 2 -0.4055 -0.2418
+ 2 -0.2444  0.1614
+ 2 -0.4784  0.0282
+
+T11_08B   10    2 format
+) New cases to be classified on p. 660 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) They are to be classified using classifier based on data in Table
+) 11.8
+) These data were edited from file T11-8B.DAT on disk from book
+) Hemophilia data
+) Col. 1: X1 = log10(AHF activity)
+) Col. 2: X2 = log10(AHF-like antigen)
+)"%lf %lf"
+(f7.f,f8.3)
+ -0.112  -0.279
+ -0.059  -0.068
+  0.064   0.012
+ -0.043  -0.052
+ -0.050  -0.098
+ -0.094  -0.113
+ -0.123  -0.143
+ -0.011  -0.037
+ -0.210  -0.090
+ -0.126  -0.019
+
+T11_09    43    9 format
+) Data from Table 11.9 p. 664-665 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T11-9.DAT on disk from book
+) Manufacturer recoded as G = General Mills -> 1, K = Kellogg -> 2,
+) Q = Quaker -> 3 and group variable in last column eliminated
+) Typo in case 11 variable 7 corrected
+) Data on brands of cereal
+) Col. 0: Brand of cereal (skipped by format)
+) Col. 1: Manufacturer (1 = G, 2 = K, 3 = Q)
+) Col. 2: Calories
+) Col. 3: Protein
+) Col. 4: Fat
+) Col. 5: Sodium
+) Col. 6: Fiber
+) Col. 7: Carbohydrates
+) Col. 8: Sugar
+) Col. 9: Potassium
+)"23x %f %f %f %f %f %f %f %f %f"
+(23x,f2.0,f4.0,2f2.0,f4.0,f4.1,f5.1,f3.0,f4.0)
+ACCheerios              1 110 2 2 180 1.5  10.5 10  70
+Cheerios                1 110 6 2 290 2.0  17.0  1 105
+CocoaPuffs              1 110 1 1 180 0.0  12.0 13  55
+CountChocula            1 110 1 1 180 0.0  12.0 13  65
+GoldenGrahams           1 110 1 1 280 0.0  15.0  9  45
+HoneyNutCheerios        1 110 3 1 250 1.5  11.5 10  90
+Kix                     1 110 2 1 260 0.0  21.0  3  40
+LuckyCharms             1 110 2 1 180 0.0  12.0 12  55
+MultiGrainCheerios      1 100 2 1 220 2.0  15.0  6  90
+OatmealRaisinCrisp      1 130 3 2 170 1.5  13.5 10 120
+RaisinNutBran           1 100 3 2 140 2.5  10.5  8 140
+TotalCornFlakes         1 110 2 1 200 0.0  21.0  3  35
+TotalRaisinBran         1 140 3 1 190 4.0  15.0 14 230
+TotalWholeGrain         1 100 3 1 200 3.0  16.0  3 110
+Trix                    1 110 1 1 140 0.0  13.0 12  25
+Cheaties                1 100 3 1 200 3.0  17.0  3 110
+WheatiesHoneyGold       1 110 2 1 200 1.0  16.0  8  60
+AllBran                 2  70 4 1 260 9.0   7.0  5 320
+AppleJacks              2 110 2 0 125 1.0  11.0 14  30
+CornFlakes              2 100 2 0 290 1.0  21.0  2  35
+CornPops                2 110 1 0  90 1.0  13.0 12  20
+CracklinOatBran         2 110 3 3 140 4.0  10.0  7 160
+Crispix                 2 110 2 0 220 1.0  21.0  3  30
+FrootLoops              2 110 2 1 125 1.0  11.0 13  30
+FrostedFlakes           2 110 1 0 200 1.0  14.0 11  25
+FrostedMiniWheats       2 100 3 0   0 3.0  14.0  7 100
+FruitfulBran            2 120 3 0 240 5.0  14.0 12 190
+JustRightCrunchyNuggets 2 110 2 1 170 1.0  17.0  6  60
+MueslixCrispyBlend      2 160 3 2 150 3.0  17.0 13 160
+NutNHoneyCrunch         2 120 2 1 190 0.0  15.0  9  40
+NutriGrainAlmondRaisin  2 140 3 2 220 3.0  21.0  7 130
+NutriGrainWheat         2  90 3 0 170 3.0  18.0  2  90
+Product19               2 100 3 0 320 1.0  20.0  3  45
+RaisinBran              2 120 3 1 210 5.0  14.0 12 240
+RiceKrispies            2 110 2 0 290 0.0  22.0  3  35
+Smacks                  2 110 2 1  70 1.0   9.0 15  40
+SpecialK                2 110 6 0 230 1.0  16.0  3  55
+CapNCrunch              3 120 1 2 220 0.0  12.0 12  35
+HoneyGrahamOhs          3 120 1 2 220 1.0  12.0 11  45
+Life                    3 100 4 2 150 2.0  12.0  6  95
+PuffedRice              3  50 1 0   0 0.0  13.0  0  15
+PuffedWheat             3  50 2 0   0 1.0  10.0  0  50
+QuakerOatmeal           3 100 5 2   0 2.7   1.0  1 110
+
+T12_01    22    22 format
+) Data from Table 12.1 p. 672 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-1.DAT on disk from book
+) The upper triangle has been filled in symmetrically
+) Distances between 22 utilities based on data in Table 12.5, p. 687
+) in data set T12_05
+)"%f %f %f %f %f %f %f %f %f %f %f %f"
+(12f5.2/10f5.2)
+ 0.00 3.10 3.68 2.46 4.12 3.61 3.90 2.74 3.25 3.10 3.49 3.22
+ 3.96 2.11 2.59 4.03 4.40 1.88 2.41 3.17 3.45 2.51
+ 3.10 0.00 4.92 2.16 3.85 4.22 3.45 3.89 3.96 2.71 4.79 2.43
+ 3.43 4.32 2.50 4.84 3.62 2.90 4.63 3.00 2.32 2.42
+ 3.68 4.92 0.00 4.11 4.47 2.99 4.22 4.99 2.75 3.93 5.90 4.03
+ 4.39 2.74 5.16 5.26 6.36 2.72 3.18 3.73 5.09 4.11
+ 2.46 2.16 4.11 0.00 4.13 3.20 3.97 3.69 3.75 1.49 4.86 3.50
+ 2.58 3.23 3.19 4.97 4.89 2.65 3.46 1.82 3.88 2.58
+ 4.12 3.85 4.47 4.13 0.00 4.60 4.60 5.16 4.49 4.05 6.46 3.60
+ 4.76 4.82 4.26 5.82 5.63 4.34 5.13 4.39 3.64 3.77
+ 3.61 4.22 2.99 3.20 4.60 0.00 3.35 4.91 3.73 3.83 6.00 3.74
+ 4.55 3.47 4.07 5.84 6.10 2.85 2.58 2.91 4.63 4.03
+ 3.90 3.45 4.22 3.97 4.60 3.35 0.00 4.36 2.80 4.51 6.00 1.66
+ 5.01 4.91 2.93 5.04 4.58 2.95 4.52 3.54 2.68 4.00
+ 2.74 3.89 4.99 3.69 5.16 4.91 4.36 0.00 3.59 3.67 3.46 4.06
+ 4.14 4.34 3.85 2.20 5.43 3.24 4.11 4.09 3.98 3.24
+ 3.25 3.96 2.75 3.75 4.49 3.73 2.80 3.59 0.00 3.57 5.18 2.74
+ 3.66 3.82 4.11 3.63 4.90 2.43 4.11 2.95 3.74 3.21
+ 3.10 2.71 3.93 1.49 4.05 3.83 4.51 3.67 3.57 0.00 5.08 3.94
+ 1.41 3.61 4.26 4.53 5.48 3.07 4.13 2.05 4.36 2.56
+ 3.49 4.79 5.90 4.86 6.46 6.00 6.00 3.46 5.18 5.08 0.00 5.21
+ 5.31 4.32 4.74 3.43 4.75 3.95 4.52 5.35 4.88 3.44
+ 3.22 2.43 4.03 3.50 3.60 3.74 1.66 4.06 2.74 3.94 5.21 0.00
+ 4.50 4.34 2.33 4.62 3.50 2.45 4.41 3.43 1.38 3.00
+ 3.96 3.43 4.39 2.58 4.76 4.55 5.01 4.14 3.66 1.41 5.31 4.50
+ 0.00 4.39 5.10 4.41 5.61 3.78 5.01 2.23 4.94 2.74
+ 2.11 4.32 2.74 3.23 4.82 3.47 4.91 4.34 3.82 3.61 4.32 4.34
+ 4.39 0.00 4.24 5.17 5.56 2.30 1.88 3.74 4.93 3.51
+ 2.59 2.50 5.16 3.19 4.26 4.07 2.93 3.85 4.11 4.26 4.74 2.33
+ 5.10 4.24 0.00 5.18 3.40 3.00 4.03 3.78 2.10 3.35
+ 4.03 4.84 5.26 4.97 5.82 5.84 5.04 2.20 3.63 4.53 3.43 4.62
+ 4.41 5.17 5.18 0.00 5.56 3.97 5.23 4.82 4.57 3.46
+ 4.40 3.62 6.36 4.89 5.63 6.10 4.58 5.43 4.90 5.48 4.75 3.50
+ 5.61 5.56 3.40 5.56 0.00 4.43 6.09 4.87 3.10 3.63
+ 1.88 2.90 2.72 2.65 4.34 2.85 2.95 3.24 2.43 3.07 3.95 2.45
+ 3.78 2.30 3.00 3.97 4.43 0.00 2.47 2.92 3.19 2.55
+ 2.41 4.63 3.18 3.46 5.13 2.58 4.52 4.11 4.11 4.13 4.52 4.41
+ 5.01 1.88 4.03 5.23 6.09 2.47 0.00 3.90 4.97 3.97
+ 3.17 3.00 3.73 1.82 4.39 2.91 3.54 4.09 2.95 2.05 5.35 3.43
+ 2.23 3.74 3.78 4.82 4.87 2.92 3.90 0.00 4.15 2.62
+ 3.45 2.32 5.09 3.88 3.64 4.63 2.68 3.98 3.74 4.36 4.88 1.38
+ 4.94 4.93 2.10 4.57 3.10 3.19 4.97 4.15 0.00 3.01
+ 2.51 2.42 4.11 2.58 3.77 4.03 4.00 3.24 3.21 2.56 3.44 3.00
+ 2.74 3.51 3.35 3.46 3.63 2.55 3.97 2.62 3.01 0.00
+
+T12_04    11    11 format labels
+) Data from Table 12.4 p. 679 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-4.DAT on disk from book
+) The upper triangle has been filled in symmetrically and row
+) and column labels added
+) Concordant first letters for numbers in 11 languages
+) Languages are in order E=English, N=Norwegian, Da=Danish,
+) Du=Dutch, G=German, Fr=French, Sp=Spanish, I=Italian,
+) P=Polish, H=Hungarian, Fi=Finnish
+)"%lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf"
+(f3.0,10f4.0)
+ 10   8   8   3   4   4   4   4   3   1   1
+  8  10   9   5   6   4   4   4   3   2   1
+  8   9  10   4   5   4   5   5   4   2   1
+  3   5   4  10   5   1   1   1   0   2   1
+  4   6   5   5  10   3   3   3   2   1   1
+  4   4   4   1   3  10   8   9   5   0   1
+  4   4   5   1   3   8  10   9   7   0   1
+  4   4   5   1   3   9   9  10   6   0   1
+  3   3   4   0   2   5   7   6  10   0   1
+  1   2   2   2   1   0   0   0   0  10   2
+  1   1   1   1   1   1   1   1   1   2  10
+
+T12_04$LABELS    22 QUOTED COLUMNS
+) Row and column labels for T12_04
+)"%s %s %s %s %s %s %s %s %s %s %s"
+"E"  "N"  "Da" "Du" "G"  "Fr" "Sp" "I"  "P"  "H"  "Fi"
+"E"  "N"  "Da" "Du" "G"  "Fr" "Sp" "I"  "P"  "H"  "Fi"
+
+T12_05    22    8 format labels
+) Data from Table 12.5 p. 687 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-5.DAT on disk from book
+) Public Utility data (1975)
+) Col. 1: X1 = fixed-charge coverage ratio (income/debt)
+) Col. 2: X2 = rate of return on capital
+) Col. 3: X3 = cost per KW capacity in place
+) Col. 4: X4 = annual load factor
+) Col. 5: X5 = peak KWH demand growth from 1974 to 1975
+) Col. 6: X6 = sales (KWH use per year)
+) Col. 7: X7 = percent nuclear
+) Col. 8: X8 = total fuel costs (cents per KWH)
+) Col. 9: Utility name (skipped by format)
+)"%lf %lf %lf %lf %lf %lf %lf %lf"
+(f5.2,f5.1,f4.0,2f5.1,f6.0,f5.1,f6.3)
+ 1.06  9.2 151 54.4  1.6  9077  0.0 0.628 Arizona_Public_Service
+ 0.89 10.3 202 57.9  2.2  5088 25.3 1.555 Boston_Edison_Co.
+ 1.43 15.4 113 53.0  3.4  9212  0.0 1.058 Central_Louisiana_Electric_Co.
+ 1.02 11.2 168 56.0  0.3  6423 34.3 0.700 Commonwealth_Edison_Co.
+ 1.49  8.8 192 51.2  1.0  3300 15.6 2.044 Consolidated_Edison_Co._(N.Y.)
+ 1.32 13.5 111 60.0 -2.2 11127 22.5 1.241 Florida_Power_&_Light_Co.
+ 1.22 12.2 175 67.6  2.2  7642  0.0 1.652 Hawaiian_Electric_Co.
+ 1.10  9.2 245 57.0  3.3 13082  0.0 0.309 Idaho_Power_Co.
+ 1.34 13.0 168 60.4  7.2  8406  0.0 0.862 Kentucky_Utilities_Co.
+ 1.12 12.4 197 53.0  2.7  6455 39.2 0.623 Madison_Gas_&_Electric_Co.
+ 0.75  7.5 173 51.5  6.5 17441  0.0 0.768 Nevada_Power_Co.
+ 1.13 10.9 178 62.0  3.7  6154  0.0 1.897 New_England_Electric_Co.
+ 1.15 12.7 199 53.7  6.4  7179 50.2 0.527 Northern_States_Power_Co.
+ 1.09 12.0  96 49.8  1.4  9673  0.0 0.588 Oklahoma_Gase_&_Electric_Co.
+ 0.96  7.6 164 62.2 -0.1  6468  0.9 1.400 Pacific_Gas_&_Electric_Co.
+ 1.16  9.9 252 56.0  9.2 15991  0.0 0.620 Puget_Sound_Power_&_Light_Co.
+ 0.76  6.4 136 61.9  9.0  5714  8.3 1.920 San_Diego_Gas_&_Electric_Co.
+ 1.05 12.6 150 56.7  2.7 10140  0.0 1.108 The_Southern_Co.
+ 1.16 11.7 104 54.0 -2.1 13507  0.0 0.636 Texas_Utilities_Co.
+ 1.20 11.8 148 59.9  3.5  7287 41.1 0.702 Wisconsin_Electric_Power_Co.
+ 1.04  8.6 204 61.0  3.5  6650  0.0 2.116 United_Illuminating_Co.
+ 1.07  9.3 174 54.3  5.9 10093 26.6 1.306 Virginia_Electric_&_Power_Co.
+
+T12_05$labels 30 character columns
+) Row and column labels for data set T12_05
+)"%s %s %s %s %s %s"
+AZPubSer BostonEd CentLa  CommEd   ConsolEd FlaPowLt
+HIElect  IdahoPow KYUtils MadGasEl NevPower NewEngEl
+NSP      OKGasEl  PGandE  PSPL     SDGEC    Southern
+TXUtils  WisElPow UI      VAElPow  FCCRatio Return
+CapCost  LoadFact PeakKWH Sales    Nuclear  TotalCost
+
+
+T12_06    8    8 format
+) Data from Table 12.6 p. 688 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-6.DAT on disk from book
+) The upper triangle has been filled in symmetrically
+) Correlations for public utility data
+)"%lf %lf %lf %lf %lf %lf %lf %lf"
+(8f7.3)
+  1.000  0.643 -0.103 -0.082 -0.259 -0.152  0.045 -0.013
+  0.643  1.000 -0.348 -0.086 -0.260 -0.010  0.211 -0.328
+ -0.103 -0.348  1.000  0.100  0.435  0.028  0.115  0.005
+ -0.082 -0.086  0.100  1.000  0.034 -0.288 -0.164  0.486
+ -0.259 -0.260  0.435  0.034  1.000  0.176 -0.019 -0.007
+ -0.152 -0.010  0.028 -0.288  0.176  1.000 -0.374 -0.561
+  0.045  0.211  0.115 -0.164 -0.019 -0.374  1.000 -0.185
+ -0.013 -0.328  0.005  0.486 -0.007 -0.561 -0.185  1.000
+
+T12_07    12    12 format
+) Data from Table 12.7 p. 703 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-7.DAT on disk from book
+) Airline-distances between 12 cities
+) Upper triangle has been filled in
+)"%lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf"
+(12f5.0)
+    0 1068  461  549  805  508  505 2197  366  558 2467  467 Atlanta
+ 1068    0  867  769 1819  941 1494 3052 1355 1178 2747 1379 Boston
+  461  867    0  107  943  108  618 2186  502  338 2067  928 Cincinnati
+  549  769  107    0 1050  172  725 2245  586  409 2131  985 Columbus
+  805 1819  943 1050    0  882  325 1403  464  645 1891 1077 Dallas
+  508  941  108  172  882    0  562 2080  436  234 1959  975 Indianapolis
+  505 1494  618  725  325  562    0 1701  137  353 1988  912 Little_Rock
+ 2197 3052 2186 2245 1403 2080 1701    0 1831 1848 1227 2480 Los_Angeles
+  366 1355  502  586  464  436  137 1831    0  294 2042  779 Memphis
+  558 1178  338  409  645  234  353 1848  294    0 1820 1016 St.Louis
+ 2467 2747 2067 2131 1891 1959 1988 1227 2042 1820    0 2821 Spokane
+  467 1379  928  985 1077  975  912 2480  779 1016 2821    0 Tampa
+
+T12_08    7    4 format labels
+) Data from Table 12.8 p. 709 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-8.DAT on disk from book
+) Final column of row totals and final row of column totals deleted
+) Frequencies of types of pottery
+) Col. 0: Site (P0, P1, ..., P6), skipped by format
+) Col. 1: Frequencies for type A pottery
+) Col. 2: Frequencies for type B pottery
+) Col. 3: Frequencies for type C pottery
+) Col. 4: Frequencies for type D pottery
+)"%f %f %f %f"
+(4f5.0)
+   30   10   10   39
+   53    4   16    2
+   73    1   41    1
+   20    6    1    4
+   46   36   37   13
+   45    6   59   10
+   16   28  169    5
+
+T12_08$LABELS    11 QUOTED COLUMNS
+) Row and column labels for data set T12_08
+)"%s %s %s %s %s %s %s"
+"P0" "P1" "P2" "P3" "P4" "P5" "P6"
+"A"  "B"  "C"  "D"
+
+T12_09    25    6 format
+) Data from Table 12.9 p. 722 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-9.DAT on disk from book
+) Data on Universities
+) Col. 0: University name (skipped by format)
+) Col. 1: SAT = average SAT score of new freshmen
+) Col. 2: Top10 = percentage of new freshmen in top 10% of class
+) Col. 3: Accept = percentage of applicants accepted
+) Col. 4: SFRatio = student-faculty ratio
+) Col. 5: Expenses = estimated annual expenses
+) Col. 6: Grad = graduation rate
+)"15x %f %f %f %f %f %f"
+(15x,f6.2,f4.0,2f3.0,f7.3,f3.0)
+Harvard         14.00  91 14 11 39.525 97
+Princeton       13.75  91 14  8 30.220 95
+Yale            13.75  95 19 11 43.514 96
+Stanford        13.60  90 20 12 36.450 93
+MIT             13.80  94 30 10 34.870 91
+Duke            13.15  90 30 12 31.585 95
+Cal_Tech        14.15 100 25  6 63.575 81
+Dartmouth       13.40  89 23 10 32.162 95
+Brown           13.10  89 22 13 22.704 94
+Johns_Hopkins   13.05  75 44  7 58.691 87
+U_Chicago       12.90  75 50 13 38.380 87
+U_Penn          12.85  80 36 11 27.553 90
+Cornell         12.80  83 33 13 21.864 90
+Northwestern    12.60  85 39 11 28.052 89
+Columbia        13.10  76 24 12 31.510 88
+NotreDame       12.55  81 42 13 15.122 94
+U_Virginia      12.25  77 44 14 13.349 92
+Georgetown      12.55  74 24 12 20.126 92
+Carnegie_Mellon 12.60  62 59  9 25.026 72
+U_Michigan      11.80  65 68 16 15.470 85
+UC_Berkeley     12.40  95 40 17 15.140 78
+U_Wisconsin     10.85  40 69 15 11.857 71
+Penn_State      10.81  38 54 18 10.185 80
+Purdue          10.05  28 90 19  9.066 69
+Texas_A&M       10.75  49 67 25  8.704 67
+
+T12_10    8    10 format labels
+) Data from Table 12.10 p. 787 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-10.DAT on disk from book
+) Wisconsin Forest data
+) Col. 0: Tree species (skipped by format)
+) Col. 1-10: counts at sites 1 - 10
+)"12x %f %f %f %f %f %f %f %f %f %f"
+(12x,10f3.0)
+Burr_Oak      9  8  3  5  6  0  5  0  0  0
+Black_Oak     8  9  8  7  0  0  0  0  0  0
+White_Oak     5  4  9  9  7  7  4  6  0  2
+Red_Oak       3  4  0  6  9  8  7  6  4  3
+American_Elm  2  2  4  5  6  0  5  0  2  5
+Basswood      0  0  0  0  2  7  6  6  7  6
+Ironwood      0  0  0  0  0  0  7  4  6  5
+Sugar_Maple   0  0  0  0  0  5  4  8  8  9
+
+T12_10$LABELS    18 QUOTED COLUMNS
+) Row and column labels for data set T12_10
+)"%s %s %s %s %s"
+"BurOak"    "BlackOak"  "WhiteOak"   "RedOak"  "AmericanElm"
+"Basswood"  "Ironwood"  "SugarMaple"  "Site1"  "Site2"
+"Site3"     "Site4"     "Site5"       "Site6"  "Site7"
+"Site8"     "Site9"     "Site10"
+
+T12_12    12    12 format
+) Data from Table 12.12 p. 743 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-12.DAT on disk from book
+) with upper triangle filled in
+) Distance between cities in Wisconsin and cities in neighboring
+) states.
+(f4.0,11f5.0)
+   0  130   98  102  103  100  149  315   91  196  257  186 Appleton
+ 130    0   33   50  185   73   33  377  186   94  304   97 Beloit
+  98   33    0   36  164   54   58  359  166  119  287  113 Fort_Atkinson
+ 102   50   36    0  138   77   47  330  139   95  258  146 Madison
+ 103  185  164  138    0  184  170  219   45  186  161  276 Marshfield
+ 100   73   54   77  184    0  107  394  181  168  322   93 Milwaukee
+ 149   33   58   47  170  107    0  362  186   61  289  130 Monroe
+ 315  377  359  330  219  394  362    0  223  351  162  467 Superior
+  91  186  166  139   45  181  186  223    0  215  175  275 Wausau
+ 196   94  119   95  186  168   61  351  215    0  274  184 Dubuque
+ 257  304  287  258  161  322  289  162  175  274    0  395 St.Paul
+ 186   97  113  146  276   93  130  467  275  184  395    0 Chicago
+
+T12_13    9    9 format
+) Data from Table 12.13 p. 745 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-13.DAT on disk from book
+) with upper triangle filled in
+) Distance between archeological sites
+)"%lf %lf %lf %lf %lf %lf %lf %lf %lf"
+(9f6.3)
+ 0.000 2.202 1.004 1.108 1.122 0.914 0.914 2.056 1.608 P1980918
+ 2.202 0.000 2.025 1.943 1.870 2.070 2.186 2.055 1.722 P1931131
+ 1.004 2.025 0.000 0.233 0.719 0.719 0.452 1.986 1.358 P1550960
+ 1.108 1.943 0.233 0.000 0.541 0.679 0.681 1.990 1.168 P1530987
+ 1.122 1.870 0.719 0.541 0.000 0.539 1.102 1.963 0.681 P1361024
+ 0.914 2.070 0.719 0.679 0.539 0.000 0.916 2.056 1.005 P1351005
+ 0.914 2.186 0.452 0.681 1.102 0.916 0.000 2.027 1.719 P1340945
+ 2.056 2.055 1.986 1.990 1.963 2.056 2.027 0.000 1.991 P1311137
+ 1.608 1.722 1.358 1.168 0.681 1.005 1.719 1.991 0.000 P1301062
+
+T12_14    4    5 format
+) Data from Table 12.14 p. 745 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-14.DAT on disk from book
+) Mental health status and socioeconomic status count data
+) Col. 0: Menal helath status (skipped by format)
+) Col. 1 count of parental socioeconomic status A (high)
+) Col. 2 count of parental socioeconomic status B
+) Col. 3 count of parental socioeconomic status C
+) Col. 4 count of parental socioeconomic status D
+) Col. 5 count of parental socioeconomic status E (low)
+)"17x %f %f %f %f %f"
+(17x,5f6.0)
+Well                121    57    72    36    21
+Mild_Symptoms       188   105   141    97    71
+Moderate_Symptoms   112    65    77    54    54
+Impaired             86    60    94    78    71
+
+T12_15    3    4 format
+) Data from Table 12.15 p. 745 in
+) Applied Mulivariate Statistical Analysis, 5th Edition
+) by Richard A. Johnson and Dean W. Wichern, Prentice Hall, 2002
+) These data were edited from file T12-15.DAT on disk from book
+) Income and job satisfaction data
+) Col. 0: Income class (skipped by format)
+)         low = < $25K, middle = $25K-$50K, high = > $50K
+) Col. 1: Count of very dissatisfied individuals
+) Col. 2: Count of somewhat dissatisfied individuals
+) Col. 3: Count of moderately satisfied individuals
+) Col. 4: Count of very satisfied individuals
+)"6x %f %f %f %f"
+(6x,4f5.0)
+Low      42   62  184  207
+Middle   13   28   81  113
+High      7   18   54   92
+
