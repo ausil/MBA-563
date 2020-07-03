@@ -3,7 +3,7 @@
 # allows you to install (if not already) and load all the required packages by passing their 
 # names as arguments in the p_load function. 
 
-install.packages("pacman") # install the package pacman
+#install.packages("pacman") # install the package pacman
 library(pacman) # laod the ackage in the current session
 p_load("factoextra") # install (if not already) and load the package factoextra. if already installed,
 # this will only load the package without installing again(redundant)
