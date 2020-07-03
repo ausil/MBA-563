@@ -11,20 +11,20 @@ university_pca <- cbind(university,PCs) # merge all data
 summary(pca_univ)# output of PCA model 
 
 # Regression Model to predict Graduation Rate on all 5 variables (without PCA)
-model <- lm(GradRate~ SAT+TOP10+Accept+SFRatio+Expenses, data = university_pca)
+model <- lm(Grad~ SAT+Top10+Accept+SFRatio+Expenses, data = university_pca)
 summary(model)
 # Multiple R-squared:  0.7104
 # Adjusted R-squared:  0.6342
 
 
 # Regression Model to predict Graduation Rate based on 1st component only
-model_pca1 <-lm(GradRate~ PC1, data = university_pca)
+model_pca1 <-lm(Grad~ PC1, data = university_pca)
 summary(model_pca1)
 # Multiple R-squared:  0.5414 
 # Adjusted R-squared:  0.5215
 
 # Regression Model to predict Graduation Rate based on 1st and 2nd components
-model_pca2 <-lm(GradRate~ PC1+PC2, data = university_pca)
+model_pca2 <-lm(Grad~ PC1+PC2, data = university_pca)
 summary(model_pca2)
 # Multiple R-squared:  0.6705 (0.6705/0.7104 = 0.9438345) 
 # Adjusted R-squared:  0.6405
