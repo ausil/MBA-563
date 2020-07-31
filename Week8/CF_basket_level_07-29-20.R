@@ -2,7 +2,7 @@ library(pacman)
 p_load("recommenderlab", "arules") # recommenderlab is a library for collaborative filtering 
 
 
-bb <- read.csv("Bigbasket.csv") # read the data file
+bb <- read.csv("BigBasket.csv") # read the data file
 
 trans <- as(split(bb[,"Description"], bb[,"Order"]), "transactions") # Convert the data into "transaction" object
 
